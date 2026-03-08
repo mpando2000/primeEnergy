@@ -8,6 +8,27 @@
 
     <title inertia>{{ config('app.name', 'PrimeVolt Electric') }}</title>
 
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="PrimeVolt Electric Co. Ltd - Leading electrical contractor in Tanzania. Specializing in electrical installation, HVAC systems, ICT services, and land investment opportunities.">
+    <meta name="keywords" content="electrical contractor Tanzania, HVAC systems, ICT services, land investment Tanzania, Mikumi, electrical installation Dar es Salaam">
+    <meta name="author" content="PrimeVolt Electric Co. Ltd">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="PrimeVolt Electric Co. Ltd - Electrical Contractor Tanzania">
+    <meta property="og:description" content="Leading electrical contractor in Tanzania. Specializing in electrical installation, HVAC systems, ICT services, and land investment opportunities.">
+    <meta property="og:image" content="{{ asset('prime-logo.png') }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ url()->current() }}">
+    <meta property="twitter:title" content="PrimeVolt Electric Co. Ltd - Electrical Contractor Tanzania">
+    <meta property="twitter:description" content="Leading electrical contractor in Tanzania. Specializing in electrical installation, HVAC systems, ICT services, and land investment opportunities.">
+    <meta property="twitter:image" content="{{ asset('prime-logo.png') }}">
+
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="/prime-logo.png">
     <link rel="apple-touch-icon" href="/prime-logo.png">
@@ -29,6 +50,34 @@
     @viteReactRefresh
     @vite(['resources/js/app.tsx', "resources/js/Pages/{$page['component']}.tsx"])
     @inertiaHead
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PrimeVolt Electric Co. Ltd",
+        "url": "{{ url('/') }}",
+        "logo": "{{ asset('prime-logo.png') }}",
+        "description": "Leading electrical contractor in Tanzania specializing in electrical installation, HVAC systems, ICT services, and land investment opportunities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dar es Salaam",
+            "addressCountry": "Tanzania"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Service",
+            "url": "{{ url('/contact') }}"
+        },
+        "sameAs": [
+            "{{ $settings['facebook'] ?? '' }}",
+            "{{ $settings['twitter'] ?? '' }}",
+            "{{ $settings['linkedin'] ?? '' }}",
+            "{{ $settings['instagram'] ?? '' }}"
+        ]
+    }
+    </script>
 </head>
 
 <body class="font-sans antialiased">
