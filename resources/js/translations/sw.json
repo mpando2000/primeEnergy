@@ -1,0 +1,526 @@
+{
+    "nav": {
+        "home": "Nyumbani",
+        "about": "Kuhusu Sisi",
+        "services": "Huduma Zetu",
+        "investments": "Uwekezaji wa Ardhi",
+        "projects": "Miradi Yetu",
+        "training": "Mafunzo ya Wafanyakazi",
+        "contact": "Wasiliana Nasi",
+        "login": "Ingia"
+    },
+    "topBar": {
+        "phone": "+255 XXX XXX XXX",
+        "email": "info@example.com"
+    },
+    "home": {
+        "slides": {
+            "slide1": {
+                "title": "Ufundi wa Kuaminika",
+                "subtitle": "Ufundi wa kuaminika na maadili ya biashara"
+            },
+            "slide2": {
+                "title": "Huduma za Umeme za Kitaalamu",
+                "subtitle": "Kampuni ya ukandarasi iliyojitolea kwa uwezo wa kiufundi kila wakati"
+            },
+            "slide3": {
+                "title": "Huduma za ICT na Usalama",
+                "subtitle": "Kila undani unazingatiwa kuhakikisha mradi unaofanikiwa"
+            }
+        },
+        "services": {
+            "title": "HUDUMA",
+            "electrical": {
+                "title": "UMEME",
+                "description": "Kubuni, Kufunga na matengenezo ya waya za umeme na mifumo ya umeme"
+            },
+            "hvac": {
+                "title": "MFUMO WA HVAC",
+                "description": "Mifumo ya HVAC yenye ufanisi wa nishati kwa mazingira ya kuaminika na starehe"
+            },
+            "ict": {
+                "title": "MAWASILIANO NA ICT",
+                "description": "Kupanga, kubuni, kufunga na matengenezo ya Mifumo ya ICT na Usalama"
+            },
+            "distribution": {
+                "title": "NJIA ZA USAMBAZAJI",
+                "description": "Ufungaji wa Transfoma za Usambazaji na kuunganisha wateja wapya"
+            },
+            "security": {
+                "title": "MIFUMO YA USALAMA NA CCTV",
+                "description": "Wahandisi wanaobobea katika mifumo ya usalama na kengele za moto"
+            }
+        },
+        "welcome": {
+            "title": "Karibu PrimeVolt Energy Co. Ltd",
+            "p1": "PrimeVolt Energy Co. Ltd ni kampuni inayokua inayomilikiwa na Watanzania, yenye sifa nzuri ya utaalamu, kuaminika, ujuzi wa kiufundi na kutoa suluhisho zinazofaa kiuchumi na bora kiufundi.",
+            "p2": "Tumekua kuwa kampuni ya ujenzi ya Umeme, HVAC na ICT yenye mafanikio, na leo timu yetu inashiriki katika nyanja zote za shughuli zetu.",
+            "p3": "PrimeVolt Energy imesajiliwa na Bodi ya Usajili wa Wakandarasi (CRB) na pia ni mwanachama wa Chama cha Wakandarasi Wananchi Tanzania (ACCT)."
+        },
+        "md": {
+            "title": "KUTOKA KWA MKURUGENZI MKUU",
+            "message": "Kwa miaka mingi, PrimeVolt Energy imeshiriki katika miradi mingi mikubwa ya ujenzi na uhandisi – kupata uzoefu na utaalamu wa thamani, na kupata sifa kama mojawapo ya wakandarasi wakuu wa umeme nchini Tanzania.",
+            "readMore": "Soma zaidi →"
+        },
+        "investments": {
+            "title": "FURSA ZA UWEKEZAJI WA ARDHI",
+            "subtitle": "Gundua fursa za ardhi bora katika maeneo muhimu nchini Tanzania. Inafaa kwa mahoteli, kambi za watalii, na maendeleo ya kibiashara karibu na mbuga za taifa na maeneo ya pwani.",
+            "hotels": "Mahoteli na Mapumziko",
+            "hotelsDesc": "Maeneo bora kwa maendeleo ya mahoteli ya kifahari",
+            "camps": "Kambi za Watalii",
+            "campsDesc": "Maeneo muhimu karibu na Mikumi na mbuga zingine za taifa",
+            "commercial": "Maendeleo ya Kibiashara",
+            "commercialDesc": "Mali za pwani zinazofaa kwa biashara mbalimbali",
+            "viewOpportunities": "Tazama Fursa za Uwekezaji"
+        }
+    },
+    "about": {
+        "pageTitle": "Kuhusu Sisi",
+        "sidebar": {
+            "title": "Kampuni Yetu",
+            "aboutUs": "Kuhusu Sisi",
+            "ourTeam": "Timu Yetu",
+            "philosophy": "Falsafa ya Biashara Yetu",
+            "careers": "Fursa za Kazi",
+            "policies": "Sera za Kampuni"
+        },
+        "content": {
+            "title": "Kampuni Yetu",
+            "p1": "PrimeVolt Energy Co. Ltd ni kampuni inayokua inayomilikiwa na Watanzania, yenye sifa nzuri ya utaalamu, kuaminika, ujuzi wa kiufundi na kutoa suluhisho zinazofaa kiuchumi na bora kiufundi.",
+            "p2": "Tangu mwanzo wetu, PrimeVolt Energy imekua kuwa kampuni ya ujenzi ya Umeme, HVAC na ICT yenye mafanikio, na leo timu yetu inashiriki katika nyanja zote za shughuli zetu.",
+            "p3": "PrimeVolt Energy Co. Ltd imesajiliwa na Bodi ya Usajili wa Wakandarasi (CRB) na pia ni mwanachama wa Chama cha Wakandarasi Wananchi Tanzania (ACCT).",
+            "p4": "Kampuni yetu imesajiliwa na Bodi ya Usajili wa Wakandarasi katika makundi yafuatayo:",
+            "categories": {
+                "electrical": "Umeme",
+                "hvac": "Joto, Uingizaji hewa na Hali ya hewa (HVAC)",
+                "ict": "Mawasiliano, ICT na Mifumo ya Usalama"
+            }
+        },
+        "vision": {
+            "title": "MAONO",
+            "text": "\"Kuwa wakandarasi wakuu wa Umeme, HVAC, Mawasiliano na ICT - bora katika darasa lake; kutoa kwa wateja wetu bidhaa na huduma bora na teknolojia za kisasa kwa njia ya gharama nafuu na utaalamu wa hali ya juu.\""
+        },
+        "mission": {
+            "title": "DHAMIRA",
+            "text": "Dhamira yetu ni kudumisha msimamo wetu katika sekta kama kampuni ya kuaminika kwa kutoa suluhisho la gharama nafuu litakalofaa mahitaji ya mteja kulingana na Uhandisi huru na wa kweli, bila kujali ushirikiano na wasambazaji wa bidhaa. Falsafa yetu ni kwamba matokeo bora yanapatikana wakati kuna uelewa wa pamoja wa malengo na madhumuni ya mteja, mshauri, wasambazaji na wafanyakazi wote."
+        },
+        "coreValues": {
+            "title": "MAADILI YA MSINGI",
+            "safety": {
+                "title": "Usalama",
+                "description": "Tunathamini usalama wakati wote na katika hali zote."
+            },
+            "integrity": {
+                "title": "Uadilifu",
+                "description": "Tunaheshimiana na wale tunaowahudumia kwa kuwa waaminifu na kuchagua haki ngumu badala ya kosa rahisi kwa faida ya kampuni yetu yote."
+            },
+            "accountability": {
+                "title": "Uwajibikaji",
+                "description": "Tunachukua jukumu la kibinafsi kwa matendo, maamuzi na ahadi zetu."
+            },
+            "people": {
+                "title": "Watu",
+                "description": "Tunaamini kwamba rasilimali yetu kuu ni watu wetu, na kwa kuwalea na kuwaongoza katika mazingira ya kusisimua tutaendeleza na kudumisha uaminifu wao."
+            },
+            "environment": {
+                "title": "Mazingira",
+                "description": "Katika shughuli zetu zote tutahakikisha kuwa tunatoa bidhaa na suluhisho zinazolinda mazingira zinazokidhi mahitaji ya taifa letu linaloendelea."
+            }
+        },
+        "membership": {
+            "title": "Uanachama na Usajili",
+            "text": "PrimeVolt Energy imesajiliwa na Bodi ya Usajili wa Wakandarasi (CRB) na ni mwanachama wa Chama cha Wakandarasi Wananchi Tanzania (ACCT)."
+        },
+        "team": {
+            "title": "Timu Yetu",
+            "description": "Mafanikio yetu yanajengwa juu ya utaalamu na kujitolea kwa timu yetu ya kitaalamu.",
+            "joinTitle": "Jiunge na Timu Yetu",
+            "joinText": "Tunatafuta watu wenye vipaji kujiunga na timu yetu inayokua. Angalia fursa za kazi kwa nafasi zilizo wazi."
+        },
+        "philosophy": {
+            "title": "Falsafa ya Biashara Yetu",
+            "description": "Katika PrimeVolt Energy, tunaamini katika kujenga uhusiano wa kudumu kupitia kazi bora na mazoea ya biashara ya kimaadili.",
+            "quality": {
+                "title": "Ubora Kwanza",
+                "text": "Hatuwezi kuacha ubora. Kila mradi, bila kujali ukubwa, unapata umakini wetu kamili na kujitolea kwa ubora."
+            },
+            "partnership": {
+                "title": "Mbinu ya Ushirikiano",
+                "text": "Tunawaona wateja wetu kama washirika. Kuelewa mahitaji yao na kufanya kazi kwa ushirikiano kunahakikisha matokeo mazuri ya mradi."
+            },
+            "innovation": {
+                "title": "Ubunifu Endelevu",
+                "text": "Tunakaa sasa na maendeleo ya sekta na kuboresha mbinu na teknolojia zetu kila wakati."
+            },
+            "sustainable": {
+                "title": "Mazoea Endelevu",
+                "text": "Tumejitolea kwa mazoea yanayohifadhi mazingira na kukuza suluhisho zenye ufanisi wa nishati."
+            }
+        },
+        "careers": {
+            "title": "Fursa za Kazi",
+            "description": "Jiunge na kampuni inayoongoza ya ukandarasi wa umeme Tanzania. Tunatoa mishahara ya ushindani, fursa za ukuaji wa kitaalamu, na mazingira ya kazi yanayounga mkono.",
+            "openings": "Nafasi Zilizo Wazi",
+            "fulltime": "Wakati Wote",
+            "multiple": "Nyingi",
+            "job1": {
+                "title": "Mhandisi Mkuu wa Umeme",
+                "description": "Ongoza miradi changamano ya umeme, fundisha wahandisi wachanga, na hakikisha viwango vya ubora.",
+                "location": "Dar es Salaam • Uzoefu wa miaka 5+"
+            },
+            "job2": {
+                "title": "Mratibu wa Mradi",
+                "description": "Ratibu shughuli za mradi, simamia ratiba, na wasiliana na wateja na wakandarasi.",
+                "location": "Dar es Salaam • Uzoefu wa miaka 3+"
+            },
+            "job3": {
+                "title": "Fundi wa Umeme",
+                "description": "Fanya ufungaji, matengenezo, na ukarabati wa mifumo ya umeme. Cheti cha VETA kinahitajika.",
+                "location": "Maeneo Mbalimbali • Uzoefu wa miaka 2+"
+            },
+            "howToApply": "Jinsi ya Kuomba",
+            "applyText": "Tuma CV yako na barua ya maombi kwa",
+            "applyNote": "Tafadhali jumuisha jina la nafasi katika mstari wa somo la barua pepe yako."
+        },
+        "policies": {
+            "title": "Sera za Kampuni",
+            "description": "Sera zetu huongoza utendakazi wetu na kuhakikisha tunadumisha viwango vya juu zaidi vya taaluma, usalama na mwenendo wa maadili.",
+            "safety": {
+                "title": "Sera ya Afya na Usalama",
+                "text": "Usalama ndio kipaumbele chetu kikuu. Tunadumisha itifaki kali za usalama kwenye tovuti zote za kazi.",
+                "item1": "PPE ya lazima kwa wafanyikazi wote wa tovuti",
+                "item2": "Ukaguzi wa mara kwa mara wa usalama",
+                "item3": "Uvumilivu sifuri kwa ukiukaji wa usalama",
+                "item4": "Taratibu za kuripoti matukio na uchunguzi"
+            },
+            "environment": {
+                "title": "Sera ya Mazingira",
+                "text": "Tumejitolea kupunguza athari zetu za mazingira na kukuza mazoea endelevu.",
+                "item1": "Utupaji sahihi wa taka za umeme",
+                "item2": "Suluhisho zenye ufanisi wa nishati kwa wateja",
+                "item3": "Kupunguza matumizi ya karatasi kupitia hati za kidijitali",
+                "item4": "Mipango ya kuchakata tena katika ofisi zote"
+            },
+            "ethics": {
+                "title": "Maadili na Uzingatiaji",
+                "text": "Tunafanya biashara kwa uadilifu na uwazi, kwa kuzingatia sheria na kanuni zote zinazotumika.",
+                "item1": "Kujitolea kupambana na rushwa",
+                "item2": "Mazoezi ya ushindani wa haki",
+                "item3": "Usiri wa taarifa za mteja",
+                "item4": "Ulinzi wa mtoa taarifa"
+            },
+            "quality": {
+                "title": "Uhakikisho wa Ubora",
+                "text": "Tunadumisha viwango vya ubora wa hali ya juu katika awamu zote za miradi yetu.",
+                "item1": "Kanuni za usimamizi wa ubora wa ISO 9001",
+                "item2": "Ukaguzi wa ubora wa mara kwa mara",
+                "item3": "Mipango ya uboreshaji inayoendelea",
+                "item4": "Ujumuishaji wa maoni ya wateja"
+            }
+        }
+    },
+    "services": {
+        "pageTitle": "Huduma Zetu",
+        "sidebar": {
+            "title": "Huduma Zetu",
+            "electrical": "Ufungaji wa Umeme",
+            "hvac": "Mifumo ya HVAC",
+            "ict": "Mawasiliano na ICT",
+            "security": "Mifumo ya Usalama",
+            "distribution": "Njia za Usambazaji"
+        },
+        "content": {
+            "title": "Huduma Zetu",
+            "p1": "Aina mbalimbali za huduma bora zinazotolewa na PrimeVolt Energy zinaonyesha portfolio yetu inayoendelea kupanuka ya ujuzi na uzoefu.",
+            "p2": "Kutoka kwa mfano wetu wa awali wa biashara unaozingatia kazi za umeme za kawaida, tumepanua wigo wa huduma zetu katika maeneo ya kiufundi zaidi. Kampuni yetu sasa ina uwezo mkubwa katika sekta zifuatazo maalum:"
+        },
+        "projectsBox": {
+            "title": "Miradi Yetu",
+            "text": "Tazama baadhi ya Miradi yetu"
+        }
+    },
+    "projects": {
+        "pageTitle": "Miradi Yetu",
+        "sidebar": {
+            "title": "Makundi ya Miradi",
+            "electrical": "Miradi ya Umeme",
+            "hvac": "Miradi ya HVAC",
+            "ict": "Mawasiliano na ICT",
+            "security": "Mifumo ya Usalama",
+            "distribution": "Njia za Usambazaji"
+        },
+        "content": {
+            "title": "Miradi"
+        },
+        "filters": {
+            "all": "Yote",
+            "electrical": "Umeme",
+            "hvac": "HVAC",
+            "ict": "Huduma za ICT",
+            "security": "Usalama",
+            "distribution": "Usambazaji"
+        }
+    },
+    "projectDetail": {
+        "breadcrumb": {
+            "home": "Nyumbani",
+            "projects": "Miradi"
+        },
+        "overview": "Muhtasari wa Mradi",
+        "scope": "Wigo wa Kazi",
+        "highlights": "Mambo Muhimu ya Mradi",
+        "highlightsText": "Mradi ulikamilishwa ndani ya ratiba na bajeti iliyopangwa. Timu yetu ilihakikisha usumbufu mdogo kwa shughuli zinazoendelea za taasisi huku ikidumisha viwango vya juu vya ubora na usalama. Kituo kipya sasa kinatumika kama rasilimali ya kisasa kwa mafunzo ya wataalamu.",
+        "details": {
+            "title": "Maelezo ya Mradi",
+            "client": "Mteja",
+            "location": "Mahali",
+            "category": "Kategoria",
+            "year": "Mwaka",
+            "status": "Hali"
+        },
+        "otherProjects": "Miradi Mingine",
+        "backToProjects": "Rudi kwa Miradi",
+        "statuses": {
+            "completed": "Imekamilika",
+            "inProgress": "Inaendelea",
+            "pending": "Inasubiri"
+        },
+        "categories": {
+            "electrical": "Umeme",
+            "hvac": "HVAC",
+            "ict": "Huduma za ICT",
+            "security": "Mifumo ya Usalama",
+            "distribution": "Njia ya Usambazaji"
+        },
+        "projects": {
+            "1": {
+                "title": "Ujenzi wa Maabara ya ICT - Taasisi ya Utawala wa Kodi",
+                "description": "PrimeVolt Energy Co. Ltd iliajiriwa kubuni, kusambaza, kufunga, kujaribu na kuanzisha miundombinu kamili ya maabara ya ICT kwa Taasisi ya Utawala wa Kodi. Mradi huu ulihusisha upangaji wa kina na utekelezaji wa vifaa vya kisasa vya ICT kusaidia programu za elimu za taasisi.",
+                "scope": [
+                    "Kubuni na kufunga mfumo wa waya uliopangwa",
+                    "Usanidi wa miundombinu ya mtandao ikiwa ni pamoja na swichi na ruta",
+                    "Ujenzi wa chumba cha seva na ufungaji wa vifaa",
+                    "Usanidi wa vituo vya kazi kwa zaidi ya kompyuta 50",
+                    "Mifumo ya UPS na akiba ya umeme",
+                    "Mifumo ya CCTV na udhibiti wa ufikiaji",
+                    "Kiyoyozi kwa chumba cha seva"
+                ]
+            },
+            "2": {
+                "title": "Ufungaji wa Umeme wa RITA Towers - Dar es Salaam",
+                "description": "Ufungaji kamili wa umeme kwa jengo la RITA Towers ikiwa ni pamoja na usambazaji wa umeme, mifumo ya taa, na mifumo ya akiba ya dharura.",
+                "scope": [
+                    "Mfumo mkuu wa usambazaji wa umeme",
+                    "Ufungaji wa taa katika jengo lote",
+                    "Taa za dharura na alama za kutoka",
+                    "Mfumo wa jenereta ya akiba",
+                    "Mfumo wa ulinzi dhidi ya radi",
+                    "Uwekaji ardhi na uunganishaji"
+                ]
+            },
+            "3": {
+                "title": "Jengo la Biashara la Jiji la Mwanza - Mifumo ya HVAC",
+                "description": "Kubuni na kufunga mfumo kamili wa HVAC kwa Jengo la Biashara la Jiji la Mwanza.",
+                "scope": [
+                    "Mfumo wa kiyoyozi wa kati",
+                    "Mabomba ya uingizaji hewa",
+                    "Ufungaji wa mtambo wa baridi",
+                    "Ujumuishaji wa mfumo wa usimamizi wa jengo",
+                    "Vidhibiti vinavyotumia nishati kwa ufanisi",
+                    "Mafunzo ya matengenezo"
+                ]
+            },
+            "4": {
+                "title": "Makazi ya Balozi wa Japani - Mifumo ya Usalama",
+                "description": "Ufungaji wa usalama wa hali ya juu kwa Makazi ya Balozi wa Japani ikiwa ni pamoja na CCTV, udhibiti wa ufikiaji, na usalama wa mzunguko.",
+                "scope": [
+                    "Mfumo wa ufuatiliaji wa CCTV",
+                    "Mifumo ya udhibiti wa ufikiaji",
+                    "Ugunduzi wa uvamizi wa mzunguko",
+                    "Mifumo ya intercom na mawasiliano",
+                    "Ujumuishaji wa kengele ya moto",
+                    "Kituo cha ufuatiliaji wa usalama"
+                ]
+            },
+            "5": {
+                "title": "Jengo la Biashara la Kilimanjaro - NSSF",
+                "description": "Ufungaji kamili wa umeme kwa jengo la biashara la NSSF katika mkoa wa Kilimanjaro.",
+                "scope": [
+                    "Ufungaji wa voltage ya juu",
+                    "Usambazaji wa voltage ya chini",
+                    "Mifumo ya taa",
+                    "Urekebishaji wa kipengele cha nguvu",
+                    "Mifumo ya jenereta ya akiba",
+                    "Otomatiki ya jengo"
+                ]
+            },
+            "6": {
+                "title": "Mradi wa Umeme Vijijini - Mkoa wa Dodoma",
+                "description": "Mradi wa umeme vijijini unaoleta umeme kwa vijiji vya mbali katika mkoa wa Dodoma.",
+                "scope": [
+                    "Ujenzi wa njia ya usambazaji",
+                    "Ufungaji wa transfoma",
+                    "Uunganishaji wa wateja",
+                    "Mifumo ya mita",
+                    "Ufungaji wa vifaa vya usalama",
+                    "Mafunzo ya jamii"
+                ]
+            },
+            "7": {
+                "title": "Chuo Kikuu cha Dodoma - ICT ya Chuo cha Sayansi za Afya",
+                "description": "Miundombinu ya ICT kwa Chuo cha Sayansi za Afya katika Chuo Kikuu cha Dodoma.",
+                "scope": [
+                    "Miundombinu ya mtandao wa chuo",
+                    "Maabara za kompyuta",
+                    "Vifaa vya mkutano wa video",
+                    "Mifumo ya maktaba ya kidijitali",
+                    "Ufunikaji wa Wi-Fi",
+                    "Miundombinu ya seva"
+                ]
+            },
+            "8": {
+                "title": "Makazi ya Ofisi ya LAPF Dodoma",
+                "description": "Ufungaji wa umeme kwa jengo la makazi ya ofisi ya LAPF huko Dodoma.",
+                "scope": [
+                    "Usambazaji wa umeme",
+                    "Taa za ofisi",
+                    "Waya wa data",
+                    "Mfumo wa kengele ya moto",
+                    "Udhibiti wa ufikiaji",
+                    "Ufungaji wa CCTV"
+                ]
+            }
+        }
+    },
+    "training": {
+        "pageTitle": "Mafunzo ya Wafanyakazi",
+        "title": "Mafunzo ya Wafanyakazi",
+        "intro": "Katika PrimeVolt Energy, tunawekeza kwa watu wetu kupitia programu za maendeleo ya kitaalamu na mafunzo. Wafanyakazi wetu mara kwa mara huhudhuria vikao vya mafunzo vya kimataifa ili kubaki na habari za teknolojia za hivi karibuni na mbinu bora katika sekta za umeme, HVAC, na ICT.",
+        "cards": {
+            "international": {
+                "title": "Mafunzo ya Kimataifa",
+                "description": "Wafanyakazi wetu huhudhuria programu za mafunzo nchini Italia, Uholanzi, na nchi nyingine kujifunza kutoka kwa viongozi wa sekta duniani."
+            },
+            "safety": {
+                "title": "Usalama Kwanza",
+                "description": "Mafunzo ya kawaida ya OSH yanahakikisha timu yetu inadumisha viwango vya juu vya usalama katika miradi yote."
+            },
+            "certified": {
+                "title": "Wataalamu Wenye Vyeti",
+                "description": "Mafundi wetu wana vyeti kutoka taasisi za kimataifa zinazotambuliwa."
+            }
+        }
+    },
+    "contact": {
+        "pageTitle": "Wasiliana Nasi",
+        "bannerTitle": "Wasiliana Nasi",
+        "form": {
+            "title": "Tutumie Ujumbe",
+            "name": "Jina",
+            "email": "Barua pepe",
+            "phone": "Simu",
+            "subject": "Mada",
+            "message": "Ujumbe",
+            "submit": "Tuma Ujumbe",
+            "success": "Asante kwa ujumbe wako! Tutawasiliana nawe hivi karibuni."
+        },
+        "info": {
+            "title": "Mawasiliano",
+            "address": "Dar es Salaam, Tanzania",
+            "poBox": "S.L.P. XXXX",
+            "tel": "+255 XXX XXX XXX",
+            "email": "Haijasanidiwa",
+            "hours1": "Jumatatu - Ijumaa: 8:00 Asubuhi - 5:00 Jioni",
+            "hours2": "Jumamosi: 8:00 Asubuhi - 1:00 Mchana"
+        },
+        "social": {
+            "title": "Tufuate"
+        },
+        "registrations": {
+            "title": "Usajili",
+            "crb": "Bodi ya Usajili wa Wakandarasi (CRB)",
+            "acct": "Chama cha Wakandarasi Wananchi Tanzania (ACCT)"
+        }
+    },
+    "md": {
+        "pageTitle": "Kutoka kwa Mkurugenzi Mkuu",
+        "bannerTitle": "Kutoka kwa Mkurugenzi Mkuu",
+        "title": "Ujumbe kutoka kwa Mkurugenzi Mkuu Wetu",
+        "quote": "\"Kujitolea kwetu kwa ubora na uadilifu kumekuwa msingi wa mafanikio yetu.\"",
+        "greeting": "Wateja na Washirika Wapendwa,",
+        "p1": "Kwa miaka mingi, PrimeVolt Energy imeshiriki katika miradi mingi mikubwa ya ujenzi na uhandisi – kupata uzoefu na utaalamu wa thamani, na kupata sifa kama mojawapo ya wakandarasi wakuu wa umeme nchini Tanzania.",
+        "p2": "Safari yetu ilianza na maono rahisi: kutoa huduma za umeme za kuaminika na ubora wa juu zinazokidhi mahitaji yanayobadilika ya wateja wetu. Leo, ninajivunia kusema kwamba hatujafanikisha lengo hili tu bali tumelipita kwa njia nyingi.",
+        "p3": "Katika PrimeVolt Energy, tunaamini kwamba mafanikio yetu yamejengwa juu ya nguzo tatu za msingi:",
+        "pillars": {
+            "people": {
+                "title": "Watu Wetu",
+                "description": "Tunawekeza sana katika mafunzo na maendeleo ya timu yetu, kuhakikisha wana ujuzi na maarifa ya kutoa matokeo bora."
+            },
+            "processes": {
+                "title": "Michakato Yetu",
+                "description": "Tunafuata taratibu kali za udhibiti wa ubora na mbinu bora za sekta kuhakikisha kila mradi unakidhi viwango vya juu."
+            },
+            "partnerships": {
+                "title": "Ushirikiano Wetu",
+                "description": "Tunajenga uhusiano wa kudumu na wateja wetu, wasambazaji, na washirika kulingana na uaminifu, uwazi, na heshima ya pande zote."
+            }
+        },
+        "p4": "Tunapotazama siku zijazo, tunabaki kujitolea kwa uvumbuzi na uboreshaji endelevu. Tunapanua uwezo wetu katika nishati mbadala, teknolojia za majengo ya kisasa, na suluhisho endelevu kukidhi mahitaji yanayobadilika ya sekta yetu.",
+        "p5": "Ningependa kutumia fursa hii kuwashukuru wateja wetu wote, washirika, na wafanyakazi kwa msaada wao na uaminifu wao unaoendelea. Pamoja, tutaendelea kujenga siku zijazo bora kwa Tanzania.",
+        "signature": {
+            "regards": "Salamu za dhati,",
+            "name": "Mkurugenzi Mkuu",
+            "title": "Mkurugenzi Mkuu",
+            "company": "PrimeVolt Energy Co. Ltd"
+        },
+        "highlights": {
+            "title": "Mambo Muhimu ya Kampuni",
+            "crb": "Imesajiliwa CRB",
+            "acct": "Mwanachama wa ACCT",
+            "experience": "Uzoefu wa Miaka 10+",
+            "projects": "Miradi 100+ Imekamilika"
+        }
+    },
+    "footer": {
+        "company": {
+            "title": "PrimeVolt Energy",
+            "home": "Nyumbani",
+            "about": "Kampuni Yetu",
+            "services": "Huduma Zetu",
+            "projects": "Miradi Yetu",
+            "contact": "Wasiliana Nasi"
+        },
+        "services": {
+            "title": "HUDUMA ZETU",
+            "electrical": "Ufungaji wa Umeme",
+            "hvac": "Mifumo ya HVAC",
+            "ict": "Huduma za ICT",
+            "security": "Mifumo ya Usalama",
+            "distribution": "Njia za Usambazaji"
+        },
+        "quickLinks": {
+            "title": "VIUNGO VYA HARAKA",
+            "about": "Kuhusu Sisi",
+            "projects": "Miradi",
+            "training": "Mafunzo ya Wafanyakazi",
+            "careers": "Kazi",
+            "webmail": "Barua Pepe ya Wafanyakazi"
+        },
+        "contact": {
+            "title": "Wasiliana Nasi",
+            "company": "PrimeVolt Energy Co. Ltd",
+            "location": "Dar es Salaam, Tanzania",
+            "tel": "Simu: +255 XXX XXX XXX"
+        },
+        "copyright": "© Hakimiliki {{year}} - {{company}}. Haki Zote Zimehifadhiwa."
+    },
+    "investments": {
+        "title": "Fursa za Uwekezaji wa Ardhi",
+        "subtitle": "Gundua fursa za ardhi bora katika maeneo muhimu nchini Tanzania. Mmiliki wetu anatoa mali za kipekee zinazofaa kwa mahoteli, kambi za watalii, na maendeleo ya kibiashara karibu na mbuga za taifa na maeneo ya pwani.",
+        "investmentTypes": "Aina za Uwekezaji",
+        "keyFeatures": "Vipengele Muhimu",
+        "inquire": "Uliza Sasa",
+        "acres": "ekari",
+        "noOpportunities": "Hakuna fursa za uwekezaji zinazopatikana kwa sasa. Tafadhali rudi baadaye."
+    }
+}

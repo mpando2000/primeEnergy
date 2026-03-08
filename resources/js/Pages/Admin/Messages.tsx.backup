@@ -1,0 +1,209 @@
+import AdminLayout from '@/Layouts/AdminLayout';
+import { useState } from 'react';
+
+interface Message {
+    id: number;
+    name: string;
+    initials: string;
+    email: string;
+    phone: string;
+    subject: string;
+    excerpt: string;
+    body: string;
+    date: string;
+    dateFormatted: string;
+    read: boolean;
+}
+
+export default function Messages() {
+    const [messages] = useState<Message[]>([
+        {
+            id: 1,
+            name: 'John Mwamba',
+            initials: 'JM',
+            email: 'john.mwamba@email.com',
+            phone: '+255 712 345 678',
+            subject: 'Inquiry about electrical installation',
+            excerpt: 'Hello, I would like to inquire about your electrical installation services for our new office building...',
+            body: `Hello,
+
+I would like to inquire about your electrical installation services for our new office building located in Masaki, Dar es Salaam.
+
+The building is a 5-story commercial complex with approximately 2,000 square meters per floor. We need complete electrical installation including:
+
+- Main power distribution system
+- Lighting throughout the building
+- Emergency backup systems
+- Data cabling infrastructure
+
+Could you please provide a quotation and estimated timeline for this project? We are hoping to start construction in January 2026.
+
+Looking forward to hearing from you.
+
+Best regards,
+John Mwamba
+Mwamba Investments Ltd`,
+            date: '2 hours ago',
+            dateFormatted: 'Dec 18, 2025 at 10:30 AM',
+            read: false
+        },
+        {
+            id: 2,
+            name: 'Sarah Kimaro',
+            initials: 'SK',
+            email: 'sarah.kimaro@company.co.tz',
+            phone: '+255 754 123 456',
+            subject: 'HVAC System Quote Request',
+            excerpt: 'We are looking for a company to install HVAC systems in our commercial building...',
+            body: 'We are looking for a company to install HVAC systems in our commercial building. Please provide a quote.',
+            date: '5 hours ago',
+            dateFormatted: 'Dec 18, 2025 at 7:30 AM',
+            read: false
+        },
+        {
+            id: 3,
+            name: 'Ahmed Mohamed',
+            initials: 'AM',
+            email: 'ahmed@email.com',
+            phone: '+255 789 456 123',
+            subject: 'Security System Installation',
+            excerpt: 'I need a quote for CCTV and access control system for my residence...',
+            body: 'I need a quote for CCTV and access control system for my residence.',
+            date: '1 day ago',
+            dateFormatted: 'Dec 17, 2025 at 2:00 PM',
+            read: false
+        },
+        {
+            id: 4,
+            name: 'Peter Ngowi',
+            initials: 'PN',
+            email: 'peter.ngowi@business.co.tz',
+            phone: '+255 765 987 654',
+            subject: 'Partnership Opportunity',
+            excerpt: 'We are interested in partnering with your company for upcoming projects...',
+            body: 'We are interested in partnering with your company for upcoming projects.',
+            date: '2 days ago',
+            dateFormatted: 'Dec 16, 2025 at 11:00 AM',
+            read: true
+        },
+        {
+            id: 5,
+            name: 'Grace Kessy',
+            initials: 'GK',
+            email: 'grace.kessy@email.com',
+            phone: '+255 712 654 321',
+            subject: 'Thank you for the great work',
+            excerpt: 'I wanted to express my gratitude for the excellent work your team did...',
+            body: 'I wanted to express my gratitude for the excellent work your team did on our project.',
+            date: '3 days ago',
+            dateFormatted: 'Dec 15, 2025 at 9:00 AM',
+            read: true
+        },
+    ]);
+
+    const [selectedMessage, setSelectedMessage] = useState<Message>(messages[0]);
+    const [filter, setFilter] = useState('all');
+    const [replyText, setReplyText] = useState('');
+
+    const unreadCount = messages.filter(m => !m.read).length;
+
+    const filteredMessages = messages.filter(m => {
+        if (filter === 'unread') return !m.read;
+        return true;
+    });
+
+    return (
+        <AdminLayout title="Messages">
+            <div className="messages-container">
+                {/* Messages List */}
+                <div className="messages-list">
+                    <div className="messages-list-header">
+                        <h3>Inbox</h3>
+                        <span className="unread-count">{unreadCount} unread</span>
+                    </div>
+                    <div className="messages-filter">
+                        <button 
+                            className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
+                            onClick={() => setFilter('all')}
+                        >
+                            All
+                        </button>
+                        <button 
+                            className={`filter-btn ${filter === 'unread' ? 'active' : ''}`}
+                            onClick={() => setFilter('unread')}
+                        >
+                            Unread
+                        </button>
+                        <button className="filter-btn">Starred</button>
+                    </div>
+                    <div className="messages-scroll">
+                        {filteredMessages.map((message) => (
+                            <div 
+                                key={message.id}
+                                className={`message-item ${selectedMessage.id === message.id ? 'active' : ''} ${!message.read ? 'unread' : ''}`}
+                                onClick={() => setSelectedMessage(message)}
+                            >
+                                <div className="message-avatar">{message.initials}</div>
+                                <div className="message-preview">
+                                    <h4>{message.name} <span>{message.date}</span></h4>
+                                    <div className="subject">{message.subject}</div>
+                                    <div className="excerpt">{message.excerpt}</div>
+                                </div>
+                                {!message.read && <div className="unread-dot"></div>}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Message Detail */}
+                <div className="message-detail">
+                    <div className="message-detail-header">
+                        <div>
+                            <h3>{selectedMessage.subject}</h3>
+                            <p>From: {selectedMessage.name}</p>
+                        </div>
+                        <div className="message-actions">
+                            <button className="action-btn reply" title="Reply"><i className="fas fa-reply"></i></button>
+                            <button className="action-btn archive" title="Archive"><i className="fas fa-archive"></i></button>
+                            <button className="action-btn delete" title="Delete"><i className="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div className="message-meta">
+                        <div className="meta-item">
+                            <label>From</label>
+                            <span>{selectedMessage.name}</span>
+                        </div>
+                        <div className="meta-item">
+                            <label>Email</label>
+                            <a href={`mailto:${selectedMessage.email}`}>{selectedMessage.email}</a>
+                        </div>
+                        <div className="meta-item">
+                            <label>Phone</label>
+                            <span>{selectedMessage.phone}</span>
+                        </div>
+                        <div className="meta-item">
+                            <label>Date</label>
+                            <span>{selectedMessage.dateFormatted}</span>
+                        </div>
+                    </div>
+                    <div className="message-body">
+                        {selectedMessage.body.split('\n\n').map((paragraph, idx) => (
+                            <p key={idx}>{paragraph}</p>
+                        ))}
+                    </div>
+                    <div className="reply-box">
+                        <textarea 
+                            placeholder="Type your reply here..."
+                            value={replyText}
+                            onChange={(e) => setReplyText(e.target.value)}
+                        />
+                        <div className="reply-actions">
+                            <button className="btn btn-secondary"><i className="fas fa-paperclip"></i> Attach</button>
+                            <button className="btn btn-primary"><i className="fas fa-paper-plane"></i> Send Reply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </AdminLayout>
+    );
+}
