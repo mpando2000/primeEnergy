@@ -1,0 +1,526 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About Us",
+        "services": "Our Services",
+        "investments": "Land Investments",
+        "projects": "Our Projects",
+        "training": "Staff Training",
+        "contact": "Contact Us",
+        "login": "Login"
+    },
+    "topBar": {
+        "phone": "+255 XXX XXX XXX",
+        "email": "info@example.com"
+    },
+    "home": {
+        "slides": {
+            "slide1": {
+                "title": "Reliable Workmanship",
+                "subtitle": "Reliable workmanship and ethical business practices"
+            },
+            "slide2": {
+                "title": "Professional Electrical Services",
+                "subtitle": "Contracting company committed to technical competence always"
+            },
+            "slide3": {
+                "title": "ICT Services & Security",
+                "subtitle": "Every detail is taken into consideration to ensure a seamless project"
+            }
+        },
+        "services": {
+            "title": "SERVICES",
+            "electrical": {
+                "title": "ELECTRICAL",
+                "description": "Design, Installation and maintenance of electrical wiring and electrical systems"
+            },
+            "hvac": {
+                "title": "HVAC SYSTEM",
+                "description": "Advanced energy efficient HVAC systems for reliable and comfort controlled environment"
+            },
+            "ict": {
+                "title": "TELECOMMUNICATIONS & ICT",
+                "description": "Planning, designing, installation and maintenance of ICT & Security Systems"
+            },
+            "distribution": {
+                "title": "DISTRIBUTION LINE",
+                "description": "Installation of Distribution Transformers and connection of new customers"
+            },
+            "security": {
+                "title": "SECURITY SYSTEMS & CCTV",
+                "description": "Engineers who specialise in security and fire alarm systems"
+            }
+        },
+        "welcome": {
+            "title": "Welcome to PrimeVolt Energy Co. Ltd",
+            "p1": "PrimeVolt Energy Co. Ltd is a growing Tanzanian-owned company, with a solid reputation for professionalism, reliability, technical expertise and delivering solutions that are economically viable and technically superior.",
+            "p2": "We have grown into a successful, full-service Electrical, HVAC and ICT construction company, and today our team is engaged in all aspects of our operations.",
+            "p3": "PrimeVolt Energy is registered with the Contractors Registration Board (CRB) and is also a member of the Association of Citizens Contractors Tanzania (ACCT)."
+        },
+        "md": {
+            "title": "FROM THE MANAGING DIRECTOR",
+            "message": "For many years, PrimeVolt Energy has been involved in many major construction and engineering projects – gaining invaluable experience and expertise, and acquiring a reputation as one of the leading electrical contractors in Tanzania.",
+            "readMore": "Read more →"
+        },
+        "investments": {
+            "title": "LAND INVESTMENT OPPORTUNITIES",
+            "subtitle": "Explore prime land opportunities in strategic locations across Tanzania. Perfect for hotels, tourist camps, and commercial developments near national parks and coastal areas.",
+            "hotels": "Hotels & Resorts",
+            "hotelsDesc": "Prime locations for luxury hotels and resort developments",
+            "camps": "Tourist Camps",
+            "campsDesc": "Strategic sites near Mikumi and other national parks",
+            "commercial": "Commercial Development",
+            "commercialDesc": "Coastal properties ideal for various business ventures",
+            "viewOpportunities": "View Investment Opportunities"
+        }
+    },
+    "about": {
+        "pageTitle": "About Us",
+        "sidebar": {
+            "title": "Our Company",
+            "aboutUs": "About Us",
+            "ourTeam": "Our Team",
+            "philosophy": "Our Business Philosophy",
+            "careers": "Career Opportunities",
+            "policies": "Company Policies"
+        },
+        "content": {
+            "title": "Our Company",
+            "p1": "PrimeVolt Energy Co. Ltd is a growing Tanzanian-owned company, with a solid reputation for professionalism, reliability, technical expertise and delivering solutions that are economically viable and technically superior.",
+            "p2": "From our beginnings, PrimeVolt Energy has grown into a successful, full-service Electrical, HVAC and ICT construction company, and today our team is engaged in all aspects of our operations.",
+            "p3": "PrimeVolt Energy Co. Ltd is registered with the Contractors Registration Board (CRB) and is also a member of the Association of Citizen Contractors Tanzania (ACCT).",
+            "p4": "Our company is registered with Contractors Registration Board in the following categories:",
+            "categories": {
+                "electrical": "Electrical",
+                "hvac": "Heating, Ventilation and Air conditioning (HVAC)",
+                "ict": "Telecommunications, ICT & Security Systems"
+            }
+        },
+        "vision": {
+            "title": "VISION",
+            "text": "\"To be the premier Electrical, HVAC, Telecoms & ICT Contractors - best in its class; providing our customers with superior and quality products, services and up to date technologies in a cost effective manner and uttermost professionalism.\""
+        },
+        "mission": {
+            "title": "MISSION",
+            "text": "Our mission is to maintain our standing in the industry as a reliable firm by providing a cost effective solution that will best fit the client's requirements based on independent and objective Engineering, irrespective of product supplier alliances. Our philosophy is that the best outcomes are achieved when there is mutual understanding of the goals and objectives of the client, consultant, suppliers and all employees."
+        },
+        "coreValues": {
+            "title": "CORE VALUES",
+            "safety": {
+                "title": "Safety",
+                "description": "We value safety at all times and in all situations."
+            },
+            "integrity": {
+                "title": "Integrity",
+                "description": "We respect each other and those we serve by being honest and choosing the hard right over the easy wrong for the good of our entire company."
+            },
+            "accountability": {
+                "title": "Accountability",
+                "description": "We take personal responsibility for our actions, decisions and commitments."
+            },
+            "people": {
+                "title": "People",
+                "description": "We believe that our key resource is our people, and that by nurturing and guiding them in a stimulating environment we will develop and retain their loyalty."
+            },
+            "environment": {
+                "title": "Environment",
+                "description": "In all our dealings we will ensure that we provide the most environmentally friendly products and solutions that meet the demands of our developing nation."
+            }
+        },
+        "membership": {
+            "title": "Membership & Registration",
+            "text": "PrimeVolt Energy is registered with the Contractors Registration Board (CRB) and is a member of the Association of Citizen Contractors Tanzania (ACCT)."
+        },
+        "team": {
+            "title": "Our Team",
+            "description": "Our success is built on the expertise and dedication of our professional team.",
+            "joinTitle": "Join Our Team",
+            "joinText": "We're always looking for talented individuals to join our growing team. Check our career opportunities for current openings."
+        },
+        "philosophy": {
+            "title": "Our Business Philosophy",
+            "description": "At PrimeVolt Energy, we believe in building lasting relationships through quality work and ethical business practices.",
+            "quality": {
+                "title": "Quality First",
+                "text": "We never compromise on quality. Every project, regardless of size, receives our full attention and commitment to excellence."
+            },
+            "partnership": {
+                "title": "Partnership Approach",
+                "text": "We view our clients as partners. Understanding their needs and working collaboratively ensures successful project outcomes."
+            },
+            "innovation": {
+                "title": "Continuous Innovation",
+                "text": "We stay current with industry advancements and continuously improve our methods and technologies."
+            },
+            "sustainable": {
+                "title": "Sustainable Practices",
+                "text": "We are committed to environmentally responsible practices and promoting energy-efficient solutions."
+            }
+        },
+        "careers": {
+            "title": "Career Opportunities",
+            "description": "Join Tanzania's leading electrical contracting company. We offer competitive salaries, professional growth opportunities, and a supportive work environment.",
+            "openings": "Current Openings",
+            "fulltime": "Full-time",
+            "multiple": "Multiple",
+            "job1": {
+                "title": "Senior Electrical Engineer",
+                "description": "Lead complex electrical projects, mentor junior engineers, and ensure quality standards.",
+                "location": "Dar es Salaam • 5+ years experience"
+            },
+            "job2": {
+                "title": "Project Coordinator",
+                "description": "Coordinate project activities, manage schedules, and liaise with clients and contractors.",
+                "location": "Dar es Salaam • 3+ years experience"
+            },
+            "job3": {
+                "title": "Electrical Technician",
+                "description": "Install, maintain, and repair electrical systems. VETA certification required.",
+                "location": "Various Locations • 2+ years experience"
+            },
+            "howToApply": "How to Apply",
+            "applyText": "Send your CV and cover letter to",
+            "applyNote": "Please include the position title in your email subject line."
+        },
+        "policies": {
+            "title": "Company Policies",
+            "description": "Our policies guide our operations and ensure we maintain the highest standards of professionalism, safety, and ethical conduct.",
+            "safety": {
+                "title": "Health & Safety Policy",
+                "text": "Safety is our top priority. We maintain strict safety protocols on all job sites.",
+                "item1": "Mandatory PPE for all site personnel",
+                "item2": "Regular safety audits and inspections",
+                "item3": "Zero tolerance for safety violations",
+                "item4": "Incident reporting and investigation procedures"
+            },
+            "environment": {
+                "title": "Environmental Policy",
+                "text": "We are committed to minimizing our environmental impact and promoting sustainable practices.",
+                "item1": "Proper disposal of electrical waste",
+                "item2": "Energy-efficient solutions for clients",
+                "item3": "Reduced paper usage through digital documentation",
+                "item4": "Recycling programs at all offices"
+            },
+            "ethics": {
+                "title": "Ethics & Compliance",
+                "text": "We conduct business with integrity and transparency, adhering to all applicable laws and regulations.",
+                "item1": "Anti-corruption and anti-bribery commitment",
+                "item2": "Fair competition practices",
+                "item3": "Confidentiality of client information",
+                "item4": "Whistleblower protection"
+            },
+            "quality": {
+                "title": "Quality Assurance",
+                "text": "We maintain rigorous quality standards throughout all phases of our projects.",
+                "item1": "ISO 9001 quality management principles",
+                "item2": "Regular quality audits",
+                "item3": "Continuous improvement programs",
+                "item4": "Customer feedback integration"
+            }
+        }
+    },
+    "services": {
+        "pageTitle": "Our Services",
+        "sidebar": {
+            "title": "Our Services",
+            "electrical": "Electrical Installation",
+            "hvac": "HVAC Systems",
+            "ict": "Telecommunications & ICT",
+            "security": "Security Systems",
+            "distribution": "Distribution Line"
+        },
+        "content": {
+            "title": "Our Services",
+            "p1": "The diverse range of quality services offered by PrimeVolt Energy demonstrates our continuously expanding portfolio of skills and experience.",
+            "p2": "From our initial business model focusing on general electrical work, we have broadened the scope of our services into more technically advanced areas. Our company is now highly competent in the following specialized sectors:"
+        },
+        "projectsBox": {
+            "title": "Our Projects",
+            "text": "View some of our Projects"
+        }
+    },
+    "projects": {
+        "pageTitle": "Our Projects",
+        "sidebar": {
+            "title": "Project Categories",
+            "electrical": "Electrical Projects",
+            "hvac": "HVAC Projects",
+            "ict": "Telecommunications & ICT",
+            "security": "Security Systems",
+            "distribution": "Distribution Line"
+        },
+        "content": {
+            "title": "Projects"
+        },
+        "filters": {
+            "all": "All",
+            "electrical": "Electrical",
+            "hvac": "HVAC",
+            "ict": "ICT Services",
+            "security": "Security",
+            "distribution": "Distribution"
+        }
+    },
+    "projectDetail": {
+        "breadcrumb": {
+            "home": "Home",
+            "projects": "Projects"
+        },
+        "overview": "Project Overview",
+        "scope": "Scope of Work",
+        "highlights": "Project Highlights",
+        "highlightsText": "The project was completed within the scheduled timeline and budget. Our team ensured minimal disruption to the institute's ongoing activities while maintaining the highest standards of quality and safety. The new facility now serves as a state-of-the-art resource for training professionals.",
+        "details": {
+            "title": "Project Details",
+            "client": "Client",
+            "location": "Location",
+            "category": "Category",
+            "year": "Year",
+            "status": "Status"
+        },
+        "otherProjects": "Other Projects",
+        "backToProjects": "Back to Projects",
+        "statuses": {
+            "completed": "Completed",
+            "inProgress": "In Progress",
+            "pending": "Pending"
+        },
+        "categories": {
+            "electrical": "Electrical",
+            "hvac": "HVAC",
+            "ict": "ICT Services",
+            "security": "Security Systems",
+            "distribution": "Distribution Line"
+        },
+        "projects": {
+            "1": {
+                "title": "ICT Laboratory Construction - Tax Administration Institute",
+                "description": "PrimeVolt Energy Co. Ltd was contracted to design, supply, install, test and commission a complete ICT laboratory infrastructure for the Tax Administration Institute. This project involved comprehensive planning and execution of modern ICT facilities to support the institute's educational programs.",
+                "scope": [
+                    "Design and installation of structured cabling system",
+                    "Network infrastructure setup including switches and routers",
+                    "Server room construction and equipment installation",
+                    "Workstation setup for 50+ computer terminals",
+                    "UPS and power backup systems",
+                    "CCTV and access control systems",
+                    "Air conditioning for server room"
+                ]
+            },
+            "2": {
+                "title": "RITA Towers Electrical Installation - Dar es Salaam",
+                "description": "Complete electrical installation for the RITA Towers building including power distribution, lighting systems, and emergency backup systems.",
+                "scope": [
+                    "Main power distribution system",
+                    "Lighting installation throughout the building",
+                    "Emergency lighting and exit signs",
+                    "Generator backup system",
+                    "Lightning protection system",
+                    "Earthing and bonding"
+                ]
+            },
+            "3": {
+                "title": "Mwanza City Commercial Complex - HVAC Systems",
+                "description": "Design and installation of a comprehensive HVAC system for the Mwanza City Commercial Complex.",
+                "scope": [
+                    "Central air conditioning system",
+                    "Ventilation ductwork",
+                    "Chiller plant installation",
+                    "Building management system integration",
+                    "Energy-efficient controls",
+                    "Maintenance training"
+                ]
+            },
+            "4": {
+                "title": "Japanese Ambassador Residence - Security Systems",
+                "description": "High-security installation for the Japanese Ambassador Residence including CCTV, access control, and perimeter security.",
+                "scope": [
+                    "CCTV surveillance system",
+                    "Access control systems",
+                    "Perimeter intrusion detection",
+                    "Intercom and communication systems",
+                    "Fire alarm integration",
+                    "Security monitoring center"
+                ]
+            },
+            "5": {
+                "title": "Kilimanjaro Commercial Complex - NSSF",
+                "description": "Full electrical installation for the NSSF commercial complex in Kilimanjaro region.",
+                "scope": [
+                    "High voltage installation",
+                    "Low voltage distribution",
+                    "Lighting systems",
+                    "Power factor correction",
+                    "Standby generator systems",
+                    "Building automation"
+                ]
+            },
+            "6": {
+                "title": "Rural Electrification Project - Dodoma Region",
+                "description": "Rural electrification project bringing power to remote villages in the Dodoma region.",
+                "scope": [
+                    "Distribution line construction",
+                    "Transformer installation",
+                    "Customer connections",
+                    "Metering systems",
+                    "Safety equipment installation",
+                    "Community training"
+                ]
+            },
+            "7": {
+                "title": "University of Dodoma - College of Health Sciences ICT",
+                "description": "ICT infrastructure for the College of Health Sciences at the University of Dodoma.",
+                "scope": [
+                    "Campus network infrastructure",
+                    "Computer laboratories",
+                    "Video conferencing facilities",
+                    "Digital library systems",
+                    "Wi-Fi coverage",
+                    "Server infrastructure"
+                ]
+            },
+            "8": {
+                "title": "LAPF Dodoma Office Accommodation",
+                "description": "Electrical installation for the LAPF office accommodation building in Dodoma.",
+                "scope": [
+                    "Power distribution",
+                    "Office lighting",
+                    "Data cabling",
+                    "Fire alarm system",
+                    "Access control",
+                    "CCTV installation"
+                ]
+            }
+        }
+    },
+    "training": {
+        "pageTitle": "Staff Training",
+        "title": "Staff Training",
+        "intro": "At PrimeVolt Energy, we invest in our people through continuous professional development and training programs. Our staff regularly attend international training sessions to stay updated with the latest technologies and best practices in the electrical, HVAC, and ICT industries.",
+        "cards": {
+            "international": {
+                "title": "International Training",
+                "description": "Our staff attend training programs in Italy, Netherlands, and other countries to learn from global industry leaders."
+            },
+            "safety": {
+                "title": "Safety First",
+                "description": "Regular OSH training ensures our team maintains the highest safety standards on all projects."
+            },
+            "certified": {
+                "title": "Certified Professionals",
+                "description": "Our technicians hold certifications from recognized international institutions."
+            }
+        }
+    },
+    "contact": {
+        "pageTitle": "Contact Us",
+        "bannerTitle": "Contact Us",
+        "form": {
+            "title": "Send Us a Message",
+            "name": "Name",
+            "email": "E-Mail",
+            "phone": "Phone",
+            "subject": "Subject",
+            "message": "Message",
+            "submit": "Send Message",
+            "success": "Thank you for your message! We will get back to you soon."
+        },
+        "info": {
+            "title": "Contact Information",
+            "address": "Dar es Salaam, Tanzania",
+            "poBox": "P.O. Box XXXX",
+            "tel": "+255 XXX XXX XXX",
+            "email": "Not configured",
+            "hours1": "Monday - Friday: 8:00 AM - 5:00 PM",
+            "hours2": "Saturday: 8:00 AM - 1:00 PM"
+        },
+        "social": {
+            "title": "Follow Us"
+        },
+        "registrations": {
+            "title": "Registrations",
+            "crb": "Contractors Registration Board (CRB)",
+            "acct": "Association of Citizen Contractors Tanzania (ACCT)"
+        }
+    },
+    "md": {
+        "pageTitle": "From the Managing Director",
+        "bannerTitle": "From the Managing Director",
+        "title": "A Message from Our Managing Director",
+        "quote": "\"Our commitment to excellence and integrity has been the cornerstone of our success.\"",
+        "greeting": "Dear Valued Clients and Partners,",
+        "p1": "For many years, PrimeVolt Energy has been involved in many major construction and engineering projects – gaining invaluable experience and expertise, and acquiring a reputation as one of the leading electrical contractors in Tanzania.",
+        "p2": "Our journey began with a simple vision: to provide reliable, high-quality electrical services that meet the evolving needs of our clients. Today, I am proud to say that we have not only achieved this goal but have exceeded it in many ways.",
+        "p3": "At PrimeVolt Energy, we believe that our success is built on three fundamental pillars:",
+        "pillars": {
+            "people": {
+                "title": "Our People",
+                "description": "We invest heavily in training and developing our team, ensuring they have the skills and knowledge to deliver exceptional results."
+            },
+            "processes": {
+                "title": "Our Processes",
+                "description": "We follow rigorous quality control procedures and industry best practices to ensure every project meets the highest standards."
+            },
+            "partnerships": {
+                "title": "Our Partnerships",
+                "description": "We build lasting relationships with our clients, suppliers, and partners based on trust, transparency, and mutual respect."
+            }
+        },
+        "p4": "As we look to the future, we remain committed to innovation and continuous improvement. We are expanding our capabilities in renewable energy, smart building technologies, and sustainable solutions to meet the changing demands of our industry.",
+        "p5": "I would like to take this opportunity to thank all our clients, partners, and employees for their continued support and trust. Together, we will continue to build a brighter future for Tanzania.",
+        "signature": {
+            "regards": "Warm regards,",
+            "name": "The Managing Director",
+            "title": "Managing Director",
+            "company": "PrimeVolt Energy Co. Ltd"
+        },
+        "highlights": {
+            "title": "Company Highlights",
+            "crb": "CRB Registered",
+            "acct": "ACCT Member",
+            "experience": "10+ Years Experience",
+            "projects": "100+ Projects Completed"
+        }
+    },
+    "footer": {
+        "company": {
+            "title": "PrimeVolt Energy",
+            "home": "Home",
+            "about": "Our Company",
+            "services": "Our Services",
+            "projects": "Our Projects",
+            "contact": "Contact Us"
+        },
+        "services": {
+            "title": "OUR SERVICES",
+            "electrical": "Electrical Installation",
+            "hvac": "HVAC Systems",
+            "ict": "ICT Services",
+            "security": "Security Systems",
+            "distribution": "Distribution Lines"
+        },
+        "quickLinks": {
+            "title": "QUICK LINKS",
+            "about": "About Us",
+            "projects": "Projects",
+            "training": "Staff Training",
+            "careers": "Careers",
+            "webmail": "Staff Webmail"
+        },
+        "contact": {
+            "title": "Contact Us",
+            "company": "PrimeVolt Energy Co. Ltd",
+            "location": "Dar es Salaam, Tanzania",
+            "tel": "Tel: +255 XXX XXX XXX"
+        },
+        "copyright": "© Copyright {{year}} - {{company}}. All Rights Reserved."
+    },
+    "investments": {
+        "title": "Land Investment Opportunities",
+        "subtitle": "Discover prime land opportunities in strategic locations across Tanzania. Our owner offers exceptional properties perfect for hotels, tourist camps, and commercial developments near national parks and coastal areas.",
+        "investmentTypes": "Investment Types",
+        "keyFeatures": "Key Features",
+        "inquire": "Inquire Now",
+        "acres": "acres",
+        "noOpportunities": "No investment opportunities available at the moment. Please check back later."
+    }
+}
