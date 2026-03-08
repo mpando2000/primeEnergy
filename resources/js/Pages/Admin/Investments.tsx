@@ -73,23 +73,29 @@ export default function Investments({ lands }: Props) {
     };
 
     const handleLanguageSwitch = (lang: 'en' | 'sw') => {
+        console.log('Switching to:', lang);
+        console.log('Editing land:', editingLand);
+        
         if (editingLand) {
             // When editing, switch between saved English and Swahili content
-            setData({
+            const newData = {
                 title: lang === 'en' ? editingLand.title : (editingLand.title_sw || editingLand.title),
                 description: lang === 'en' ? editingLand.description : (editingLand.description_sw || editingLand.description),
                 location: lang === 'en' ? editingLand.location : (editingLand.location_sw || editingLand.location),
                 size_acres: editingLand.size_acres,
                 investment_types: lang === 'en' 
                     ? (Array.isArray(editingLand.investment_types) ? editingLand.investment_types : [])
-                    : (Array.isArray(editingLand.investment_types_sw) ? editingLand.investment_types_sw : editingLand.investment_types || []),
+                    : (Array.isArray(editingLand.investment_types_sw) ? editingLand.investment_types_sw : []),
                 features: lang === 'en'
                     ? (Array.isArray(editingLand.features) ? editingLand.features : [])
-                    : (Array.isArray(editingLand.features_sw) ? editingLand.features_sw : editingLand.features || []),
+                    : (Array.isArray(editingLand.features_sw) ? editingLand.features_sw : []),
                 images: Array.isArray(editingLand.images) ? editingLand.images : [],
                 is_active: editingLand.is_active,
                 source_lang: lang,
-            });
+            };
+            
+            console.log('New data:', newData);
+            setData(newData);
         } else {
             // When creating new, just update source language
             setData('source_lang', lang);
