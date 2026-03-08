@@ -33,18 +33,14 @@ export default function Investments({ lands }: Props) {
 
     const { data, setData, post, put, delete: destroy, processing, errors, reset } = useForm({
         title: '',
-        title_sw: '',
         description: '',
-        description_sw: '',
         location: '',
-        location_sw: '',
         size_acres: 0,
         investment_types: [] as string[],
-        investment_types_sw: [] as string[],
         features: [] as string[],
-        features_sw: [] as string[],
         images: [] as string[],
         is_active: true,
+        source_lang: 'en' as 'en' | 'sw',
     });
 
     useEffect(() => {
@@ -59,24 +55,21 @@ export default function Investments({ lands }: Props) {
             setEditingLand(land);
             setData({
                 title: land.title || '',
-                title_sw: land.title_sw || '',
                 description: land.description || '',
-                description_sw: land.description_sw || '',
                 location: land.location || '',
-                location_sw: land.location_sw || '',
                 size_acres: land.size_acres || 0,
                 investment_types: Array.isArray(land.investment_types) ? land.investment_types : [],
-                investment_types_sw: Array.isArray(land.investment_types_sw) ? land.investment_types_sw : [],
                 features: Array.isArray(land.features) ? land.features : [],
-                features_sw: Array.isArray(land.features_sw) ? land.features_sw : [],
                 images: Array.isArray(land.images) ? land.images : [],
                 is_active: land.is_active ?? true,
+                source_lang: 'en',
             });
         } else {
             setEditingLand(null);
             reset();
         }
         setShowModal(true);
+        setLanguage('en');
     };
 
     const closeModal = () => {
@@ -88,7 +81,10 @@ export default function Investments({ lands }: Props) {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         
-        console.log('Submitting data:', data);
+        // Set source language before submitting
+        setData('source_lang', language);
+        
+        console.log('Submitting data:', { ...data, source_lang: language });
         
         if (editingLand) {
             put(route('admin.investments.update', editingLand.id), {
@@ -117,13 +113,13 @@ export default function Investments({ lands }: Props) {
         }
     };
 
-    const addItem = (field: 'investment_types' | 'investment_types_sw' | 'features' | 'features_sw', value: string) => {
+    const addItem = (field: 'investment_types' | 'features', value: string) => {
         if (value.trim()) {
             setData(field, [...data[field], value.trim()]);
         }
     };
 
-    const removeItem = (field: 'investment_types' | 'investment_types_sw' | 'features' | 'features_sw', index: number) => {
+    const removeItem = (field: 'investment_types' | 'features', index: number) => {
         setData(field, data[field].filter((_, i) => i !== index));
     };
 
@@ -224,7 +220,7 @@ export default function Investments({ lands }: Props) {
                             <div className="flex justify-between items-center mb-6">
                                 <h2 className="text-xl font-bold">{editingLand ? 'Edit' : 'Add'} Land Investment</h2>
                                 <div className="flex items-center gap-3">
-                                    <span className="text-xs text-gray-500">Switch language to add translations</span>
+                                    <span className="text-xs text-gray-500">Choose input language</span>
                                     <div className="flex gap-2">
                                         <button
                                             type="button"
@@ -255,70 +251,43 @@ export default function Investments({ lands }: Props) {
                                         </ul>
                                     </div>
                                 )}
-                                {language === 'en' ? (
-                                    <>
-                                        <div>
-                                            <label className="block text-sm font-medium mb-1">Title</label>
-                                            <input
-                                                type="text"
-                                                value={data.title}
-                                                onChange={(e) => setData('title', e.target.value)}
-                                                className="w-full border rounded-lg px-3 py-2"
-                                                required
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-medium mb-1">Description</label>
-                                            <textarea
-                                                value={data.description}
-                                                onChange={(e) => setData('description', e.target.value)}
-                                                className="w-full border rounded-lg px-3 py-2"
-                                                rows={4}
-                                                required
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-medium mb-1">Location</label>
-                                            <input
-                                                type="text"
-                                                value={data.location}
-                                                onChange={(e) => setData('location', e.target.value)}
-                                                className="w-full border rounded-lg px-3 py-2"
-                                                required
-                                            />
-                                        </div>
-                                    </>
-                                ) : (
-                                    <>
-                                        <div>
-                                            <label className="block text-sm font-medium mb-1">Title (Swahili)</label>
-                                            <input
-                                                type="text"
-                                                value={data.title_sw}
-                                                onChange={(e) => setData('title_sw', e.target.value)}
-                                                className="w-full border rounded-lg px-3 py-2"
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-medium mb-1">Description (Swahili)</label>
-                                            <textarea
-                                                value={data.description_sw}
-                                                onChange={(e) => setData('description_sw', e.target.value)}
-                                                className="w-full border rounded-lg px-3 py-2"
-                                                rows={4}
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-medium mb-1">Location (Swahili)</label>
-                                            <input
-                                                type="text"
-                                                value={data.location_sw}
-                                                onChange={(e) => setData('location_sw', e.target.value)}
-                                                className="w-full border rounded-lg px-3 py-2"
-                                            />
-                                        </div>
-                                    </>
-                                )}
+                                
+                                <div className="bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded text-sm">
+                                    <strong>Auto-Translation:</strong> Fill in {language === 'en' ? 'English' : 'Swahili'} and it will automatically translate to {language === 'en' ? 'Swahili' : 'English'} when you save.
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-medium mb-1">Title ({language === 'en' ? 'English' : 'Swahili'})</label>
+                                    <input
+                                        type="text"
+                                        value={data.title}
+                                        onChange={(e) => setData('title', e.target.value)}
+                                        className="w-full border rounded-lg px-3 py-2"
+                                        required
+                                    />
+                                </div>
+                                
+                                <div>
+                                    <label className="block text-sm font-medium mb-1">Description ({language === 'en' ? 'English' : 'Swahili'})</label>
+                                    <textarea
+                                        value={data.description}
+                                        onChange={(e) => setData('description', e.target.value)}
+                                        className="w-full border rounded-lg px-3 py-2"
+                                        rows={4}
+                                        required
+                                    />
+                                </div>
+                                
+                                <div>
+                                    <label className="block text-sm font-medium mb-1">Location ({language === 'en' ? 'English' : 'Swahili'})</label>
+                                    <input
+                                        type="text"
+                                        value={data.location}
+                                        onChange={(e) => setData('location', e.target.value)}
+                                        className="w-full border rounded-lg px-3 py-2"
+                                        required
+                                    />
+                                </div>
 
                                 <div>
                                     <label className="block text-sm font-medium mb-1">Size (Acres)</label>
@@ -334,31 +303,31 @@ export default function Investments({ lands }: Props) {
 
                                 <div>
                                     <label className="block text-sm font-medium mb-1">
-                                        Investment Types {language === 'sw' && '(Swahili)'}
+                                        Investment Types ({language === 'en' ? 'English' : 'Swahili'})
                                     </label>
                                     <div className="flex gap-2 mb-2">
                                         <input
                                             type="text"
-                                            id={`investment-type-${language}`}
+                                            id="investment-type"
                                             className="flex-1 border rounded-lg px-3 py-2"
                                             placeholder="Add type and press Enter"
                                             onKeyPress={(e) => {
                                                 if (e.key === 'Enter') {
                                                     e.preventDefault();
                                                     const input = e.target as HTMLInputElement;
-                                                    addItem(language === 'en' ? 'investment_types' : 'investment_types_sw', input.value);
+                                                    addItem('investment_types', input.value);
                                                     input.value = '';
                                                 }
                                             }}
                                         />
                                     </div>
                                     <div className="flex flex-wrap gap-2">
-                                        {(language === 'en' ? data.investment_types : data.investment_types_sw).map((type, idx) => (
+                                        {data.investment_types.map((type, idx) => (
                                             <span key={idx} className="px-3 py-1 bg-gray-100 rounded-full text-sm flex items-center gap-2">
                                                 {type}
                                                 <button
                                                     type="button"
-                                                    onClick={() => removeItem(language === 'en' ? 'investment_types' : 'investment_types_sw', idx)}
+                                                    onClick={() => removeItem('investment_types', idx)}
                                                     className="text-red-600"
                                                 >
                                                     ×
@@ -370,31 +339,31 @@ export default function Investments({ lands }: Props) {
 
                                 <div>
                                     <label className="block text-sm font-medium mb-1">
-                                        Features {language === 'sw' && '(Swahili)'}
+                                        Features ({language === 'en' ? 'English' : 'Swahili'})
                                     </label>
                                     <div className="flex gap-2 mb-2">
                                         <input
                                             type="text"
-                                            id={`feature-${language}`}
+                                            id="feature"
                                             className="flex-1 border rounded-lg px-3 py-2"
                                             placeholder="Add feature and press Enter"
                                             onKeyPress={(e) => {
                                                 if (e.key === 'Enter') {
                                                     e.preventDefault();
                                                     const input = e.target as HTMLInputElement;
-                                                    addItem(language === 'en' ? 'features' : 'features_sw', input.value);
+                                                    addItem('features', input.value);
                                                     input.value = '';
                                                 }
                                             }}
                                         />
                                     </div>
                                     <div className="space-y-1">
-                                        {(language === 'en' ? data.features : data.features_sw).map((feature, idx) => (
+                                        {data.features.map((feature, idx) => (
                                             <div key={idx} className="flex items-center gap-2 text-sm">
                                                 <span className="flex-1">{feature}</span>
                                                 <button
                                                     type="button"
-                                                    onClick={() => removeItem(language === 'en' ? 'features' : 'features_sw', idx)}
+                                                    onClick={() => removeItem('features', idx)}
                                                     className="text-red-600"
                                                 >
                                                     Remove
