@@ -28,7 +28,7 @@ export default function Investments({ lands }: Props) {
     const [editingLand, setEditingLand] = useState<LandInvestment | null>(null);
     const [language, setLanguage] = useState<'en' | 'sw'>('en');
 
-    const { data, setData, post, put, delete: destroy, processing, reset } = useForm({
+    const { data, setData, post, put, delete: destroy, processing, errors, reset } = useForm({
         title: '',
         title_sw: '',
         description: '',
@@ -79,11 +79,21 @@ export default function Investments({ lands }: Props) {
         e.preventDefault();
         if (editingLand) {
             put(route('admin.investments.update', editingLand.id), {
-                onSuccess: closeModal,
+                onSuccess: () => {
+                    closeModal();
+                },
+                onError: (errors) => {
+                    console.error('Validation errors:', errors);
+                },
             });
         } else {
             post(route('admin.investments.store'), {
-                onSuccess: closeModal,
+                onSuccess: () => {
+                    closeModal();
+                },
+                onError: (errors) => {
+                    console.error('Validation errors:', errors);
+                },
             });
         }
     };
@@ -201,6 +211,16 @@ export default function Investments({ lands }: Props) {
                             </div>
 
                             <form onSubmit={handleSubmit} className="space-y-4">
+                                {Object.keys(errors).length > 0 && (
+                                    <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+                                        <p className="font-medium">Please fix the following errors:</p>
+                                        <ul className="list-disc list-inside mt-2">
+                                            {Object.entries(errors).map(([key, value]) => (
+                                                <li key={key}>{value}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
                                 {language === 'en' ? (
                                     <>
                                         <div>
