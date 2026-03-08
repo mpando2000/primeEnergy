@@ -50,11 +50,11 @@ class LandInvestmentController extends Controller
                     'location' => $land->location,
                     'location_sw' => $land->location_sw,
                     'size_acres' => $land->size_acres,
-                    'investment_types' => is_string($land->investment_types) ? json_decode($land->investment_types, true) : $land->investment_types,
-                    'investment_types_sw' => is_string($land->investment_types_sw) ? json_decode($land->investment_types_sw, true) : $land->investment_types_sw,
-                    'features' => is_string($land->features) ? json_decode($land->features, true) : $land->features,
-                    'features_sw' => is_string($land->features_sw) ? json_decode($land->features_sw, true) : $land->features_sw,
-                    'images' => is_string($land->images) ? json_decode($land->images, true) : $land->images,
+                    'investment_types' => $land->investment_types ?? [],
+                    'investment_types_sw' => $land->investment_types_sw ?? [],
+                    'features' => $land->features ?? [],
+                    'features_sw' => $land->features_sw ?? [],
+                    'images' => $land->images ?? [],
                     'is_active' => $land->is_active,
                 ];
             });
