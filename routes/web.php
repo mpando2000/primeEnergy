@@ -100,6 +100,11 @@ Route::middleware(['auth', 'active'])->prefix('admin')->group(function () {
         ->middleware('permission:messages.delete')
         ->name('admin.messages.destroy');
     
+    // Video Conference
+    Route::get('/video-conference', function () {
+        return Inertia::render('Admin/VideoConference');
+    })->name('admin.video-conference');
+    
     // Profile - all authenticated users
     Route::get('/profile', [App\Http\Controllers\AdminProfileController::class, 'index'])->name('admin.profile');
     Route::patch('/profile', [App\Http\Controllers\AdminProfileController::class, 'update'])->name('admin.profile.update');

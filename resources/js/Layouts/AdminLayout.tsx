@@ -105,6 +105,7 @@ export default function AdminLayout({ children, title = 'Dashboard' }: AdminLayo
     const mainItems = [
         can('dashboard.view') && { href: '/admin/dashboard', icon: 'fa-home', label: 'Dashboard' },
         can('messages.view') && { href: '/admin/messages', icon: 'fa-envelope', label: 'Messages', badge: unreadMessagesCount > 0 ? unreadMessagesCount : undefined },
+        { href: '/admin/video-conference', icon: 'fa-video', label: 'Video Conference' },
     ].filter(Boolean);
 
     const contentItems = [

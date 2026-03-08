@@ -1,24 +1,25 @@
-# Sumajkt Electric Co. Ltd - Company Website
+# PrimeVolt Electric Co. Ltd - Company Website
 
-A modern company website for Sumajkt Electric Co. Ltd, an electrical contractor based in Tanzania. Built with Laravel, Inertia.js, React, and Tailwind CSS.
+A modern, professional company website for PrimeVolt Electric Co. Ltd, a leading electrical contractor based in Tanzania. Built with Laravel, Inertia.js, React, and Tailwind CSS.
 
 ## Features
 
-- **Public Website**: Home, About, Services, Land Investments, Projects, Training, Chairman's Message, Contact pages
+- **Public Website**: Home, About, Services, Land Investments, Projects, Training, Managing Director's Message, Contact pages
 - **Multi-language Support**: English and Swahili with database-driven translations
-- **Auto-Translation**: Projects and Services auto-translate between EN/SW using Google Translate API
-- **Admin Panel**: Dashboard with collapsible sidebar, dark/light mode toggle
-- **Projects Management**: Full CRUD for company projects with image galleries and auto-translation
-- **Land Investments**: Showcase prime land opportunities for hotels, tourist camps, and commercial developments
-- **Services Management**: Manage services and sub-services with auto-translation
-- **Training Gallery**: Manage training photos
+- **Land Investments**: Showcase prime land opportunities for hotels, tourist camps, and commercial developments near national parks (Mikumi) and coastal areas
+- **Admin Panel**: Comprehensive dashboard with collapsible sidebar, dark/light mode toggle
+- **Projects Management**: Full CRUD for company projects with image galleries and multi-language support
+- **Services Management**: Manage services and sub-services with translations
+- **Training Gallery**: Manage training photos and showcase staff development
 - **Messages System**: Receive and manage contact form submissions with role-based access
-- **User Management**: Admin can create/edit/delete users with roles (admin, editor, viewer)
+- **User Management**: Admin can create/edit/delete users with custom roles and permissions
 - **Profile Management**: Users can update profile info, change password, and upload avatar
+- **Video Conference**: Integrated Jitsi Meet for secure video meetings within admin portal
 - **Notifications System**: Real-time notifications for new messages, projects, services, etc.
 - **Content Management**: Edit all website text content from admin panel
 - **Dynamic Settings**: Admin can update company info, contact details, social media, and theme colors
-- **Responsive Design**: Mobile-friendly layout
+- **SEO Optimized**: Meta tags, sitemap, structured data for Google search visibility
+- **Responsive Design**: Mobile-friendly layout across all pages
 - **Theme Customization**: Colors can be changed from admin panel and reflect across the entire website
 
 ## Tech Stack
@@ -41,8 +42,8 @@ A modern company website for Sumajkt Electric Co. Ltd, an electrical contractor 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/sumajkt-website.git
-cd sumajkt-website
+git clone https://github.com/mpando2000/primeEnergy.git
+cd primeEnergy
 ```
 
 ### 2. Install PHP dependencies
@@ -68,13 +69,13 @@ cp .env.example .env
 Edit `.env` and update the following:
 
 ```env
-APP_NAME="Sumajkt Electric"
+APP_NAME="PrimeVolt Electric"
 APP_URL=http://localhost:8000
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=sumajkt
+DB_DATABASE=primevolt
 DB_USERNAME=your_mysql_username
 DB_PASSWORD=your_mysql_password
 ```
@@ -87,10 +88,10 @@ php artisan key:generate
 
 ### 6. Create Database
 
-Create a MySQL database named `sumajkt` (or your preferred name):
+Create a MySQL database named `primevolt` (or your preferred name):
 
 ```sql
-CREATE DATABASE sumajkt CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE primevolt CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
 ### 7. Run Migrations
@@ -120,7 +121,7 @@ Then execute:
 ```php
 \App\Models\User::create([
     'name' => 'Admin',
-    'email' => 'admin@sumajkt.co.tz',
+    'email' => 'admin@primevolt.co.tz',
     'password' => bcrypt('admin123'),
     'role' => 'admin',
     'status' => 'active',
@@ -138,8 +139,8 @@ php artisan tinker
 ```
 
 ```php
-\App\Models\Setting::set('company_name', 'Sumajkt Electric Co. Ltd');
-\App\Models\Setting::set('email', 'info@sumajkt.co.tz');
+\App\Models\Setting::set('company_name', 'PrimeVolt Electric Co. Ltd');
+\App\Models\Setting::set('email', 'info@primevolt.co.tz');
 \App\Models\Setting::set('phone', '+255 22 286 2251');
 \App\Models\Setting::set('address', 'Dar es Salaam, Tanzania');
 \App\Models\Setting::set('primary_color', '#2E7D32');
@@ -276,7 +277,7 @@ Visit `http://localhost:8000` in your browser.
 
 - **URL**: `http://localhost:8000/admin/login`
 - **Default Credentials**:
-  - Email: `admin@sumajkt.co.tz`
+  - Email: `admin@primevolt.co.tz`
   - Password: `admin123`
 
 > ⚠️ **Important**: Change the default password after first login!
@@ -300,7 +301,7 @@ php artisan storage:link
 
 # Create admin user
 php artisan tinker
-# Then run: \App\Models\User::create(['name' => 'Admin', 'email' => 'admin@sumajkt.co.tz', 'password' => bcrypt('admin123'), 'role' => 'admin', 'status' => 'active']);
+# Then run: \App\Models\User::create(['name' => 'Admin', 'email' => 'admin@primevolt.co.tz', 'password' => bcrypt('admin123'), 'role' => 'admin', 'status' => 'active']);
 # Type: exit
 
 # Import translations (IMPORTANT - prevents "about.philosophy.title" issues)
@@ -454,6 +455,7 @@ Uploaded images are stored in `storage/app/public/projects/` and served via the 
 | `/admin/investments` | Manage Land Investments |
 | `/admin/training` | Manage Training |
 | `/admin/gallery` | Manage Gallery |
+| `/admin/video-conference` | Video Conference (Jitsi Meet) |
 | `/admin/content` | Manage Website Content/Translations |
 | `/admin/messages` | View Messages |
 | `/admin/profile` | User Profile & Avatar |
@@ -563,7 +565,7 @@ php artisan view:cache
 
 ## License
 
-This project is proprietary software for Sumajkt Electric Co. Ltd.
+This project is proprietary software for PrimeVolt Electric Co. Ltd.
 
 ## Support
 
