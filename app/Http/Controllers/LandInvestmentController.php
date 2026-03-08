@@ -79,6 +79,11 @@ class LandInvestmentController extends Controller
             'is_active' => 'boolean',
         ]);
 
+        // Ensure arrays are properly set
+        $validated['investment_types_sw'] = $validated['investment_types_sw'] ?? [];
+        $validated['features_sw'] = $validated['features_sw'] ?? [];
+        $validated['images'] = $validated['images'] ?? [];
+
         LandInvestment::create($validated);
 
         return redirect()->back()->with('success', 'Land investment created successfully');
@@ -103,6 +108,11 @@ class LandInvestmentController extends Controller
             'images' => 'nullable|array',
             'is_active' => 'boolean',
         ]);
+
+        // Ensure arrays are properly set
+        $validated['investment_types_sw'] = $validated['investment_types_sw'] ?? [];
+        $validated['features_sw'] = $validated['features_sw'] ?? [];
+        $validated['images'] = $validated['images'] ?? [];
 
         $land->update($validated);
 
