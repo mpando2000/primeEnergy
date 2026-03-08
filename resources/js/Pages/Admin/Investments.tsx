@@ -58,19 +58,19 @@ export default function Investments({ lands }: Props) {
         if (land) {
             setEditingLand(land);
             setData({
-                title: land.title,
+                title: land.title || '',
                 title_sw: land.title_sw || '',
-                description: land.description,
+                description: land.description || '',
                 description_sw: land.description_sw || '',
-                location: land.location,
+                location: land.location || '',
                 location_sw: land.location_sw || '',
-                size_acres: land.size_acres,
-                investment_types: land.investment_types,
-                investment_types_sw: land.investment_types_sw || [],
-                features: land.features,
-                features_sw: land.features_sw || [],
-                images: land.images || [],
-                is_active: land.is_active,
+                size_acres: land.size_acres || 0,
+                investment_types: Array.isArray(land.investment_types) ? land.investment_types : [],
+                investment_types_sw: Array.isArray(land.investment_types_sw) ? land.investment_types_sw : [],
+                features: Array.isArray(land.features) ? land.features : [],
+                features_sw: Array.isArray(land.features_sw) ? land.features_sw : [],
+                images: Array.isArray(land.images) ? land.images : [],
+                is_active: land.is_active ?? true,
             });
         } else {
             setEditingLand(null);
@@ -87,6 +87,9 @@ export default function Investments({ lands }: Props) {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        
+        console.log('Submitting data:', data);
+        
         if (editingLand) {
             put(route('admin.investments.update', editingLand.id), {
                 onSuccess: () => {
@@ -220,19 +223,24 @@ export default function Investments({ lands }: Props) {
                         <div className="p-6">
                             <div className="flex justify-between items-center mb-6">
                                 <h2 className="text-xl font-bold">{editingLand ? 'Edit' : 'Add'} Land Investment</h2>
-                                <div className="flex gap-2">
-                                    <button
-                                        onClick={() => setLanguage('en')}
-                                        className={`px-3 py-1 rounded ${language === 'en' ? 'bg-primary text-white' : 'bg-gray-200'}`}
-                                    >
-                                        EN
-                                    </button>
-                                    <button
-                                        onClick={() => setLanguage('sw')}
-                                        className={`px-3 py-1 rounded ${language === 'sw' ? 'bg-primary text-white' : 'bg-gray-200'}`}
-                                    >
-                                        SW
-                                    </button>
+                                <div className="flex items-center gap-3">
+                                    <span className="text-xs text-gray-500">Switch language to add translations</span>
+                                    <div className="flex gap-2">
+                                        <button
+                                            type="button"
+                                            onClick={() => setLanguage('en')}
+                                            className={`px-3 py-1 rounded ${language === 'en' ? 'bg-primary text-white' : 'bg-gray-200'}`}
+                                        >
+                                            EN
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={() => setLanguage('sw')}
+                                            className={`px-3 py-1 rounded ${language === 'sw' ? 'bg-primary text-white' : 'bg-gray-200'}`}
+                                        >
+                                            SW
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 

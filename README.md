@@ -121,7 +121,7 @@ Then execute:
 ```php
 \App\Models\User::create([
     'name' => 'Admin',
-    'email' => 'admin@primevolt.co.tz',
+    'email' => 'admin@primevoltenergy.co.tz',
     'password' => bcrypt('admin123'),
     'role' => 'admin',
     'status' => 'active',
@@ -139,12 +139,12 @@ php artisan tinker
 ```
 
 ```php
-\App\Models\Setting::set('company_name', 'PrimeVolt Electric Co. Ltd');
-\App\Models\Setting::set('email', 'info@primevolt.co.tz');
+\App\Models\Setting::set('company_name', 'PrimeVolt Energy Co. Ltd');
+\App\Models\Setting::set('email', 'info@primevoltenergy.co.tz');
 \App\Models\Setting::set('phone', '+255 22 286 2251');
 \App\Models\Setting::set('address', 'Dar es Salaam, Tanzania');
-\App\Models\Setting::set('primary_color', '#2E7D32');
-\App\Models\Setting::set('secondary_color', '#1B5E20');
+\App\Models\Setting::set('primary_color', '#4671b0');
+\App\Models\Setting::set('secondary_color', '#2b4c7e');
 \App\Models\Setting::set('accent_color', '#FBC02D');
 \App\Models\Setting::set('highlight_color', '#E53935');
 ```
@@ -182,20 +182,24 @@ php artisan cache:clear
 If you see raw translation keys like `about.philosophy.title` instead of actual text:
 
 1. **Check if translations exist in database:**
+
 ```bash
 php artisan tinker
 ```
+
 ```php
 App\Models\Translation::where('key', 'like', 'philosophy%')->where('group', 'about')->count();
 // Should return > 0
 ```
 
 2. **Clear the translation cache:**
+
 ```bash
 php artisan cache:clear
 ```
 
 3. **If translations are missing, re-run the About page migration:**
+
 ```bash
 php artisan migrate:rollback --step=1
 php artisan migrate
@@ -203,11 +207,13 @@ php artisan cache:clear
 ```
 
 4. **Or manually import About page translations:**
+
 ```bash
 php artisan tinker
 ```
+
 ```php
-// The migration 2024_12_24_000003_add_about_page_translations.php 
+// The migration 2024_12_24_000003_add_about_page_translations.php
 // seeds all About page translations automatically
 exit
 ```
@@ -237,6 +243,7 @@ max_execution_time = 120
 ```
 
 To find your php.ini location:
+
 ```bash
 php --ini
 ```
@@ -277,7 +284,7 @@ Visit `http://localhost:8000` in your browser.
 
 - **URL**: `http://localhost:8000/admin/login`
 - **Default Credentials**:
-  - Email: `admin@primevolt.co.tz`
+  - Email: `admin@primevoltenergy.co.tz`
   - Password: `admin123`
 
 > ⚠️ **Important**: Change the default password after first login!
@@ -394,6 +401,7 @@ The website uses CSS variables for theming. Colors can be changed from:
 **Admin Panel → Settings → Appearance**
 
 Available color settings:
+
 - Primary Color (default: #2E7D32 - Green)
 - Secondary Color (default: #1B5E20 - Dark Green)
 - Accent Color (default: #FBC02D - Yellow)
@@ -406,18 +414,21 @@ Changes apply immediately across all pages.
 The website supports English (EN) and Swahili (SW) languages.
 
 ### Static Content (Website Text)
+
 - Managed via **Admin Panel → Content**
 - All website text (headings, descriptions, buttons) stored in database
 - Edit content for both languages from one interface
 - Changes cached for performance
 
 ### Dynamic Content (Projects & Services)
+
 - When creating/editing projects or services, select your preferred language
 - Content auto-translates to the other language on save (requires Google Translate API key)
 - Switch between EN/SW in the editor to view/edit each language version
 - Public pages display content in user's selected language
 
 ### Language Switching
+
 - Users can switch language using the toggle in the website header
 - Language preference stored in browser localStorage
 - All content updates immediately without page reload
@@ -425,6 +436,7 @@ The website supports English (EN) and Swahili (SW) languages.
 ## Image Upload
 
 Projects support two methods for adding images:
+
 1. **URL**: Paste image URLs from external sources (e.g., Unsplash)
 2. **File Upload**: Upload images from your device (max 8MB per file)
 
@@ -433,42 +445,44 @@ Uploaded images are stored in `storage/app/public/projects/` and served via the 
 ## Available Routes
 
 ### Public Routes
-| Route | Description |
-|-------|-------------|
-| `/` | Home page |
-| `/about` | About Us |
-| `/services` | Our Services |
-| `/investments` | Land Investment Opportunities |
-| `/projects` | Projects List |
-| `/projects/{id}` | Project Detail |
-| `/training` | Staff Training |
-| `/chairman` | Chairman's Message |
-| `/contact` | Contact Us |
+
+| Route            | Description                   |
+| ---------------- | ----------------------------- |
+| `/`              | Home page                     |
+| `/about`         | About Us                      |
+| `/services`      | Our Services                  |
+| `/investments`   | Land Investment Opportunities |
+| `/projects`      | Projects List                 |
+| `/projects/{id}` | Project Detail                |
+| `/training`      | Staff Training                |
+| `/chairman`      | Chairman's Message            |
+| `/contact`       | Contact Us                    |
 
 ### Admin Routes
-| Route | Description |
-|-------|-------------|
-| `/login` | Admin Login |
-| `/admin` | Dashboard |
-| `/admin/projects` | Manage Projects |
-| `/admin/services` | Manage Services |
-| `/admin/investments` | Manage Land Investments |
-| `/admin/training` | Manage Training |
-| `/admin/gallery` | Manage Gallery |
-| `/admin/video-conference` | Video Conference (Jitsi Meet) |
-| `/admin/content` | Manage Website Content/Translations |
-| `/admin/messages` | View Messages |
-| `/admin/profile` | User Profile & Avatar |
-| `/admin/users` | Manage Users (Admin only) |
-| `/admin/settings` | Site Settings (Admin only) |
+
+| Route                     | Description                         |
+| ------------------------- | ----------------------------------- |
+| `/login`                  | Admin Login                         |
+| `/admin`                  | Dashboard                           |
+| `/admin/projects`         | Manage Projects                     |
+| `/admin/services`         | Manage Services                     |
+| `/admin/investments`      | Manage Land Investments             |
+| `/admin/training`         | Manage Training                     |
+| `/admin/gallery`          | Manage Gallery                      |
+| `/admin/video-conference` | Video Conference (Jitsi Meet)       |
+| `/admin/content`          | Manage Website Content/Translations |
+| `/admin/messages`         | View Messages                       |
+| `/admin/profile`          | User Profile & Avatar               |
+| `/admin/users`            | Manage Users (Admin only)           |
+| `/admin/settings`         | Site Settings (Admin only)          |
 
 ## User Roles
 
-| Role | Permissions |
-|------|-------------|
-| `admin` | Full access - can manage all content, users, and settings |
+| Role     | Permissions                                                |
+| -------- | ---------------------------------------------------------- |
+| `admin`  | Full access - can manage all content, users, and settings  |
 | `editor` | Can manage content (projects, services, training, gallery) |
-| `viewer` | Read-only access to admin panel |
+| `viewer` | Read-only access to admin panel                            |
 
 **Note**: Only admin users can access Settings and User Management sections.
 
@@ -509,19 +523,23 @@ php artisan cache:clear
 ```
 
 ### Images not uploading
+
 - Check PHP settings: `upload_max_filesize`, `post_max_size`, `memory_limit`
 - Ensure `storage/app/public/projects` directory exists and is writable
 - Run `php artisan storage:link` if images don't display
 
 ### 419 Page Expired Error
+
 - Clear browser cache and cookies
 - Run `php artisan cache:clear`
 
 ### Styles not updating
+
 - Run `npm run build` for production
 - Hard refresh browser (Cmd+Shift+R on Mac, Ctrl+Shift+R on Windows)
 
 ### Database connection issues
+
 - Verify MySQL is running
 - Check `.env` database credentials
 - Ensure database exists
