@@ -50,43 +50,13 @@
     @viteReactRefresh
     @vite(['resources/js/app.tsx', "resources/js/Pages/{$page['component']}.tsx"])
     @inertiaHead
-
-    <!-- Structured Data (Schema.org) -->
-    @php
-    $settings = \App\Models\Setting::getAllSettings();
-    @endphp
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "PrimeVolt Electric Co. Ltd",
-        "url": "{{ url('/') }}",
-        "logo": "{{ asset('prime-logo.png') }}",
-        "description": "Leading electrical contractor in Tanzania specializing in electrical installation, HVAC systems, ICT services, and land investment opportunities.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Dar es Salaam",
-            "addressCountry": "Tanzania"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "Customer Service",
-            "url": "{{ url('/contact') }}"
-        },
-        "sameAs": [
-            "{{ $settings['facebook'] ?? '' }}",
-            "{{ $settings['twitter'] ?? '' }}",
-            "{{ $settings['linkedin'] ?? '' }}",
-            "{{ $settings['instagram'] ?? '' }}"
-        ]
-    }
-    </script>
 </head>
 
 <body class="font-sans antialiased">
     @inertia
 
     @php
+    $settings = \App\Models\Setting::getAllSettings();
     $tawkEnabled = ($settings['tawk_enabled'] ?? '0') === '1';
     $tawkId = $settings['tawk_id'] ?? '';
     @endphp
