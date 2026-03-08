@@ -65,28 +65,28 @@ class LandInvestmentController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'title_sw' => 'nullable|string|max:255',
             'description' => 'required|string',
-            'description_sw' => 'nullable|string',
             'location' => 'required|string|max:255',
-            'location_sw' => 'nullable|string|max:255',
             'size_acres' => 'required|numeric|min:0',
             'investment_types' => 'nullable|array',
-            'investment_types_sw' => 'nullable|array',
             'features' => 'nullable|array',
-            'features_sw' => 'nullable|array',
             'images' => 'nullable|array',
             'is_active' => 'boolean',
+            'source_lang' => 'nullable|string|in:en,sw',
         ]);
 
-        // Ensure arrays are properly set
-        $validated['investment_types'] = $validated['investment_types'] ?? [];
-        $validated['investment_types_sw'] = $validated['investment_types_sw'] ?? [];
-        $validated['features'] = $validated['features'] ?? [];
-        $validated['features_sw'] = $validated['features_sw'] ?? [];
-        $validated['images'] = $validated['images'] ?? [];
+        // Auto-translate if source language is provided
+        $sourceLang = $validated['source_lang'] ?? 'en';
+        $data = LandInvestment::translateAndSave($validated, $sourceLang);
 
-        LandInvestment::create($validated);
+        // Ensure arrays are properly set
+        $data['investment_types'] = $data['investment_types'] ?? [];
+        $data['investment_types_sw'] = $data['investment_types_sw'] ?? [];
+        $data['features'] = $data['features'] ?? [];
+        $data['features_sw'] = $data['features_sw'] ?? [];
+        $data['images'] = $data['images'] ?? [];
+
+        LandInvestment::create($data);
 
         return redirect()->back()->with('success', 'Land investment created successfully');
     }
@@ -97,28 +97,28 @@ class LandInvestmentController extends Controller
 
         $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'title_sw' => 'nullable|string|max:255',
             'description' => 'required|string',
-            'description_sw' => 'nullable|string',
             'location' => 'required|string|max:255',
-            'location_sw' => 'nullable|string|max:255',
             'size_acres' => 'required|numeric|min:0',
             'investment_types' => 'nullable|array',
-            'investment_types_sw' => 'nullable|array',
             'features' => 'nullable|array',
-            'features_sw' => 'nullable|array',
             'images' => 'nullable|array',
             'is_active' => 'boolean',
+            'source_lang' => 'nullable|string|in:en,sw',
         ]);
 
-        // Ensure arrays are properly set
-        $validated['investment_types'] = $validated['investment_types'] ?? [];
-        $validated['investment_types_sw'] = $validated['investment_types_sw'] ?? [];
-        $validated['features'] = $validated['features'] ?? [];
-        $validated['features_sw'] = $validated['features_sw'] ?? [];
-        $validated['images'] = $validated['images'] ?? [];
+        // Auto-translate if source language is provided
+        $sourceLang = $validated['source_lang'] ?? 'en';
+        $data = LandInvestment::translateAndSave($validated, $sourceLang);
 
-        $land->update($validated);
+        // Ensure arrays are properly set
+        $data['investment_types'] = $data['investment_types'] ?? [];
+        $data['investment_types_sw'] = $data['investment_types_sw'] ?? [];
+        $data['features'] = $data['features'] ?? [];
+        $data['features_sw'] = $data['features_sw'] ?? [];
+        $data['images'] = $data['images'] ?? [];
+
+        $land->update($data);
 
         return redirect()->back()->with('success', 'Land investment updated successfully');
     }
