@@ -71,16 +71,18 @@ class LandInvestmentController extends Controller
             'location' => 'required|string|max:255',
             'location_sw' => 'nullable|string|max:255',
             'size_acres' => 'required|numeric|min:0',
-            'investment_types' => 'required|array',
+            'investment_types' => 'nullable|array',
             'investment_types_sw' => 'nullable|array',
-            'features' => 'required|array',
+            'features' => 'nullable|array',
             'features_sw' => 'nullable|array',
             'images' => 'nullable|array',
             'is_active' => 'boolean',
         ]);
 
         // Ensure arrays are properly set
+        $validated['investment_types'] = $validated['investment_types'] ?? [];
         $validated['investment_types_sw'] = $validated['investment_types_sw'] ?? [];
+        $validated['features'] = $validated['features'] ?? [];
         $validated['features_sw'] = $validated['features_sw'] ?? [];
         $validated['images'] = $validated['images'] ?? [];
 
@@ -101,16 +103,18 @@ class LandInvestmentController extends Controller
             'location' => 'required|string|max:255',
             'location_sw' => 'nullable|string|max:255',
             'size_acres' => 'required|numeric|min:0',
-            'investment_types' => 'required|array',
+            'investment_types' => 'nullable|array',
             'investment_types_sw' => 'nullable|array',
-            'features' => 'required|array',
+            'features' => 'nullable|array',
             'features_sw' => 'nullable|array',
             'images' => 'nullable|array',
             'is_active' => 'boolean',
         ]);
 
         // Ensure arrays are properly set
+        $validated['investment_types'] = $validated['investment_types'] ?? [];
         $validated['investment_types_sw'] = $validated['investment_types_sw'] ?? [];
+        $validated['features'] = $validated['features'] ?? [];
         $validated['features_sw'] = $validated['features_sw'] ?? [];
         $validated['images'] = $validated['images'] ?? [];
 
