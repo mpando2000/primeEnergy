@@ -1,6 +1,6 @@
-import { Head, useForm } from '@inertiajs/react';
+import { Head, useForm, usePage } from '@inertiajs/react';
 import AdminLayout from '@/Layouts/AdminLayout';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface LandInvestment {
     id: number;
@@ -27,6 +27,9 @@ export default function Investments({ lands }: Props) {
     const [showModal, setShowModal] = useState(false);
     const [editingLand, setEditingLand] = useState<LandInvestment | null>(null);
     const [language, setLanguage] = useState<'en' | 'sw'>('en');
+    const [successMessage, setSuccessMessage] = useState('');
+    const [uploading, setUploading] = useState(false);
+    const { flash } = usePage().props as any;
 
     const { data, setData, post, put, delete: destroy, processing, errors, reset } = useForm({
         title: '',
@@ -43,6 +46,13 @@ export default function Investments({ lands }: Props) {
         images: [] as string[],
         is_active: true,
     });
+
+    useEffect(() => {
+        if (flash?.success) {
+            setSuccessMessage(flash.success);
+            setTimeout(() => setSuccessMessage(''), 3000);
+        }
+    }, [flash]);
 
     const openModal = (land?: LandInvestment) => {
         if (land) {
@@ -118,6 +128,7 @@ export default function Investments({ lands }: Props) {
         const file = e.target.files?.[0];
         if (!file) return;
 
+        setUploading(true);
         const formData = new FormData();
         formData.append('image', file);
 
@@ -130,9 +141,17 @@ export default function Investments({ lands }: Props) {
                 },
             });
             const result = await response.json();
-            setData('images', [...data.images, result.url]);
+            if (result.url) {
+                setData('images', [...data.images, result.url]);
+                setSuccessMessage('Image uploaded successfully!');
+                setTimeout(() => setSuccessMessage(''), 3000);
+            }
         } catch (error) {
             console.error('Upload failed:', error);
+            alert('Failed to upload image');
+        } finally {
+            setUploading(false);
+            e.target.value = '';
         }
     };
 
@@ -141,6 +160,13 @@ export default function Investments({ lands }: Props) {
             <Head title="Land Investments" />
 
             <div className="p-6">
+                {successMessage && (
+                    <div className="mb-4 bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded flex justify-between items-center">
+                        <span>{successMessage}</span>
+                        <button onClick={() => setSuccessMessage('')} className="text-green-700 font-bold">×</button>
+                    </div>
+                )}
+                
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-2xl font-bold">Land Investments</h1>
                     <button
@@ -376,22 +402,26 @@ export default function Investments({ lands }: Props) {
                                         type="file"
                                         accept="image/*"
                                         onChange={handleImageUpload}
+                                        disabled={uploading}
                                         className="w-full border rounded-lg px-3 py-2"
                                     />
-                                    <div className="grid grid-cols-4 gap-2 mt-2">
-                                        {data.images.map((img, idx) => (
-                                            <div key={idx} className="relative">
-                                                <img src={img} alt="" className="w-full h-24 object-cover rounded" />
-                                                <button
-                                                    type="button"
-                                                    onClick={() => setData('images', data.images.filter((_, i) => i !== idx))}
-                                                    className="absolute top-1 right-1 bg-red-600 text-white rounded-full w-6 h-6"
-                                                >
-                                                    ×
-                                                </button>
-                                            </div>
-                                        ))}
-                                    </div>
+                                    {uploading && <p className="text-sm text-gray-500 mt-1">Uploading...</p>}
+                                    {data.images.length > 0 && (
+                                        <div className="grid grid-cols-4 gap-2 mt-2">
+                                            {data.images.map((img, idx) => (
+                                                <div key={idx} className="relative">
+                                                    <img src={img} alt={`Preview ${idx + 1}`} className="w-full h-24 object-cover rounded" />
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setData('images', data.images.filter((_, i) => i !== idx))}
+                                                        className="absolute top-1 right-1 bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center"
+                                                    >
+                                                        ×
+                                                    </button>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
 
                                 <div className="flex items-center gap-2">
