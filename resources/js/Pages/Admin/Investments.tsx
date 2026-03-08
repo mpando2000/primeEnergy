@@ -325,8 +325,8 @@ export default function Investments({ lands }: Props) {
                                     <input
                                         type="number"
                                         step="0.01"
-                                        value={data.size_acres}
-                                        onChange={(e) => setData('size_acres', parseFloat(e.target.value))}
+                                        value={data.size_acres || ''}
+                                        onChange={(e) => setData('size_acres', parseFloat(e.target.value) || 0)}
                                         className="w-full border rounded-lg px-3 py-2"
                                         required
                                     />
