@@ -140,7 +140,7 @@ export default function AdminLayout({ children, title = 'Dashboard' }: AdminLayo
             {/* Sidebar */}
             <aside className={`sidebar ${sidebarCollapsed ? 'collapsed' : ''} ${mobileMenuOpen ? 'open' : ''}`}>
                 <div className="sidebar-header">
-                    <img src="/android-icon-192x192.png" alt="Logo" className="sidebar-logo" />
+                    <img src="/prime-logo.png" alt="Logo" className="sidebar-logo" />
                     <h2>PrimeVolt ELECTRIC</h2>
                     <p>Admin Panel</p>
                 </div>

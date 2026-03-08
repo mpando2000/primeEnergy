@@ -42,9 +42,10 @@ interface FooterService {
 
 interface MainLayoutProps extends PropsWithChildren {
     currentPage?: string;
+    transparentHeader?: boolean;
 }
 
-export default function MainLayout({ children, currentPage = '' }: MainLayoutProps) {
+export default function MainLayout({ children, currentPage = '', transparentHeader = false }: MainLayoutProps) {
     const props = usePage().props as unknown as { siteSettings?: SiteSettings; footerServices?: FooterService[] };
     const siteSettings = props.siteSettings;
     const footerServices = props.footerServices || [];
@@ -100,9 +101,9 @@ export default function MainLayout({ children, currentPage = '' }: MainLayoutPro
     return (
         <div className="min-h-screen flex flex-col">
             {/* Fixed Navigation Container */}
-            <div className="fixed top-0 left-0 right-0 z-50">
+            <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}>
                 {/* Top Bar */}
-                <div className="bg-primary-dark text-white py-2 text-sm">
+                <div className={`py-1 text-xs transition-all duration-300 bg-primary-dark text-white`}>
                 <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
                     {/* Left: Phone & Email */}
                     <div className="hidden md:flex gap-5">
@@ -151,10 +152,10 @@ export default function MainLayout({ children, currentPage = '' }: MainLayoutPro
                         </div>
                         
                         {/* Language Switcher */}
-                        <div className="flex items-center gap-1 border border-white/30 rounded px-2 py-1">
+                        <div className="flex items-center gap-0.5 border border-white/30 rounded px-1.5 py-0.5">
                             <button
                                 onClick={() => setLanguage('en')}
-                                className={`px-2 py-0.5 rounded text-xs font-semibold transition-all ${
+                                className={`px-1.5 py-0 rounded text-[10px] font-semibold transition-all ${
                                     language === 'en' 
                                         ? 'bg-accent-yellow text-primary-dark' 
                                         : 'hover:text-accent-yellow'
@@ -162,10 +163,10 @@ export default function MainLayout({ children, currentPage = '' }: MainLayoutPro
                             >
                                 EN
                             </button>
-                            <span className="text-white/50">|</span>
+                            <span className="text-white/50 text-[10px]">|</span>
                             <button
                                 onClick={() => setLanguage('sw')}
-                                className={`px-2 py-0.5 rounded text-xs font-semibold transition-all ${
+                                className={`px-1.5 py-0 rounded text-[10px] font-semibold transition-all ${
                                     language === 'sw' 
                                         ? 'bg-accent-yellow text-primary-dark' 
                                         : 'hover:text-accent-yellow'
@@ -179,16 +180,16 @@ export default function MainLayout({ children, currentPage = '' }: MainLayoutPro
             </div>
 
             {/* Header */}
-            <header className="bg-white shadow-md">
+            <header className={`transition-all duration-300 ${transparentHeader ? 'bg-white shadow-md' : 'bg-white shadow-md'}`}>
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="flex justify-between items-center py-4">
+                    <div className="flex justify-between items-center py-2">
                         <Link href="/" className="flex items-center gap-3">
                             <img 
-                                src="/android-icon-48x48.png" 
-                                alt="Suma Logo" 
-                                className="w-12 h-12"
+                                src="/prime-logo.png" 
+                                alt="PrimeVolt Logo" 
+                                className="h-14 w-auto"
                             />
-                            <span className="text-primary font-bold text-xl uppercase">
+                            <span className={`font-bold text-lg uppercase transition-colors text-primary`}>
                                 {siteSettings?.company_name || 'PrimeVolt ELECTRIC CO. LTD'}
                             </span>
                         </Link>
@@ -199,7 +200,7 @@ export default function MainLayout({ children, currentPage = '' }: MainLayoutPro
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className={`font-semibold py-2 relative transition-colors hover:text-primary
+                                    className={`font-semibold text-sm py-2 relative transition-colors hover:text-primary
                                         ${currentPage === link.name ? 'text-primary' : 'text-gray-800'}
                                         after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[3px] after:bg-accent-yellow after:transition-all
                                         hover:after:w-full ${currentPage === link.name ? 'after:w-full' : ''}`}
@@ -211,7 +212,7 @@ export default function MainLayout({ children, currentPage = '' }: MainLayoutPro
                             {/* Login Button */}
                             <Link
                                 href="/admin/login"
-                                className="ml-4 px-5 py-2 bg-primary text-white rounded-lg font-semibold text-sm transition-all hover:bg-primary-dark hover:-translate-y-0.5 hover:shadow-lg"
+                                className="ml-4 px-4 py-1.5 rounded-lg font-semibold text-xs transition-all hover:-translate-y-0.5 hover:shadow-lg bg-primary text-white hover:bg-primary-dark"
                             >
                                 <i className="fas fa-sign-in-alt mr-2"></i>
                                 {t('nav.login')}

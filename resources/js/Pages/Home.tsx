@@ -81,21 +81,21 @@ export default function Home({ slides = [], mdProfile, services: dbServices = []
         return () => clearInterval(interval);
     }, [activeSlides.length]);
 
-    const mdImage = mdProfile?.image_path || '/chairperson.jpg';
+    const mdImage = mdProfile?.image_path || 'https://plus.unsplash.com/premium_photo-1663040111191-c585a609fd9c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGJsYWNrJTIwcGVyc29uJTIwbWFuYWdlcnxlbnwwfHwwfHx8MA%3D%3D';
 
     return (
-        <MainLayout currentPage="Home">
+        <MainLayout currentPage="Home" transparentHeader={true}>
             <Head title={t('nav.home')} />
 
-            {/* Hero Slider */}
-            <section className="relative h-[80vh] min-h-[600px] overflow-hidden">
+            {/* Hero Slider - extends behind header */}
+            <section className="relative h-screen min-h-[700px] overflow-hidden -mt-[180px] pt-[180px]">
                 {activeSlides.map((slide, index) => (
                     <div
                         key={slide.id}
                         className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
                     >
                         <img src={slide.image_path} alt={slide.title} className="w-full h-full object-cover" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20"></div>
                         <div className="absolute inset-0 flex items-end justify-center pb-24">
                             <div className="text-center text-white px-4">
                                 <h1 className="text-4xl md:text-5xl font-bold mb-5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
@@ -119,7 +119,7 @@ export default function Home({ slides = [], mdProfile, services: dbServices = []
                     </div>
                 ))}
                 {activeSlides.length > 1 && (
-                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-10">
                         {activeSlides.map((_, index) => (
                             <button
                                 key={index}

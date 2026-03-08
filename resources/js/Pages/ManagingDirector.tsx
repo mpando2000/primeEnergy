@@ -33,7 +33,7 @@ export default function ManagingDirector({ mdProfile }: Props) {
   const { pageBanners, siteSettings } = props;
 
   // Use database image or fallback to default
-  const mdImage = mdProfile?.image_path || "/chairperson.jpg";
+  const mdImage = mdProfile?.image_path || "https://plus.unsplash.com/premium_photo-1663040111191-c585a609fd9c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGJsYWNrJTIwcGVyc29uJTIwbWFuYWdlcnxlbnwwfHwwfHx8MA%3D%3D";
   const mdName = mdProfile?.title || t("md.signature.name");
   const companyName = siteSettings?.company_name || t("md.signature.company");
   const bannerImage =
