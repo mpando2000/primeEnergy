@@ -72,6 +72,31 @@ export default function Investments({ lands }: Props) {
         setLanguage('en');
     };
 
+    const handleLanguageSwitch = (lang: 'en' | 'sw') => {
+        if (editingLand) {
+            // When editing, switch between saved English and Swahili content
+            setData({
+                title: lang === 'en' ? editingLand.title : (editingLand.title_sw || editingLand.title),
+                description: lang === 'en' ? editingLand.description : (editingLand.description_sw || editingLand.description),
+                location: lang === 'en' ? editingLand.location : (editingLand.location_sw || editingLand.location),
+                size_acres: editingLand.size_acres,
+                investment_types: lang === 'en' 
+                    ? (Array.isArray(editingLand.investment_types) ? editingLand.investment_types : [])
+                    : (Array.isArray(editingLand.investment_types_sw) ? editingLand.investment_types_sw : editingLand.investment_types || []),
+                features: lang === 'en'
+                    ? (Array.isArray(editingLand.features) ? editingLand.features : [])
+                    : (Array.isArray(editingLand.features_sw) ? editingLand.features_sw : editingLand.features || []),
+                images: Array.isArray(editingLand.images) ? editingLand.images : [],
+                is_active: editingLand.is_active,
+                source_lang: lang,
+            });
+        } else {
+            // When creating new, just update source language
+            setData('source_lang', lang);
+        }
+        setLanguage(lang);
+    };
+
     const closeModal = () => {
         setShowModal(false);
         setEditingLand(null);
@@ -220,18 +245,20 @@ export default function Investments({ lands }: Props) {
                             <div className="flex justify-between items-center mb-6">
                                 <h2 className="text-xl font-bold">{editingLand ? 'Edit' : 'Add'} Land Investment</h2>
                                 <div className="flex items-center gap-3">
-                                    <span className="text-xs text-gray-500">Choose input language</span>
+                                    <span className="text-xs text-gray-500">
+                                        {editingLand ? 'View/edit translations' : 'Choose input language'}
+                                    </span>
                                     <div className="flex gap-2">
                                         <button
                                             type="button"
-                                            onClick={() => setLanguage('en')}
+                                            onClick={() => handleLanguageSwitch('en')}
                                             className={`px-3 py-1 rounded ${language === 'en' ? 'bg-primary text-white' : 'bg-gray-200'}`}
                                         >
                                             EN
                                         </button>
                                         <button
                                             type="button"
-                                            onClick={() => setLanguage('sw')}
+                                            onClick={() => handleLanguageSwitch('sw')}
                                             className={`px-3 py-1 rounded ${language === 'sw' ? 'bg-primary text-white' : 'bg-gray-200'}`}
                                         >
                                             SW
