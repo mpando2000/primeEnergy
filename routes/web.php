@@ -37,6 +37,9 @@ Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
 
+// Sitemap for SEO
+Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'index']);
+
 // Contact form submission
 Route::post('/contact', [App\Http\Controllers\MessageController::class, 'store'])->name('contact.store');
 
