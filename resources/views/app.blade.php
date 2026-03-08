@@ -52,6 +52,9 @@
     @inertiaHead
 
     <!-- Structured Data (Schema.org) -->
+    @php
+    $settings = \App\Models\Setting::getAllSettings();
+    @endphp
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -84,7 +87,6 @@
     @inertia
 
     @php
-    $settings = \App\Models\Setting::getAllSettings();
     $tawkEnabled = ($settings['tawk_enabled'] ?? '0') === '1';
     $tawkId = $settings['tawk_id'] ?? '';
     @endphp
