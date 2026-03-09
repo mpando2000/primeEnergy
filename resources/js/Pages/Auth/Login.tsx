@@ -26,7 +26,7 @@ export default function Login() {
                         <img 
                             src="/prime-logo.png" 
                             alt="PrimeVolt Electric Logo" 
-                            className="w-36 h-36 mx-auto mb-8 rounded-2xl shadow-2xl object-contain bg-white p-2"
+                            className="w-48 h-48 mx-auto mb-8 rounded-2xl shadow-2xl object-contain bg-white p-4"
                         />
                         <h1 className="text-3xl font-bold mb-3 tracking-wider">PrimeVolt ELECTRIC</h1>
                         <p className="text-lg opacity-90 mb-8">Admin Panel</p>
@@ -44,7 +44,7 @@ export default function Login() {
                             <img 
                                 src="/prime-logo.png" 
                                 alt="PrimeVolt Electric Logo" 
-                                className="w-20 h-20 mx-auto mb-4 rounded-xl object-contain"
+                                className="w-28 h-28 mx-auto mb-4 rounded-xl object-contain"
                             />
                             <h2 className="text-xl font-bold text-primary-dark">PrimeVolt ELECTRIC</h2>
                         </div>
