@@ -24,9 +24,9 @@ export default function Login() {
                     
                     <div className="text-center text-white relative z-10 animate-slide-from-left">
                         <img 
-                            src="/android-icon-192x192.png" 
+                            src="/prime-logo.png" 
                             alt="PrimeVolt Electric Logo" 
-                            className="w-36 h-36 mx-auto mb-8 rounded-2xl shadow-2xl"
+                            className="w-36 h-36 mx-auto mb-8 rounded-2xl shadow-2xl object-contain bg-white p-2"
                         />
                         <h1 className="text-3xl font-bold mb-3 tracking-wider">PrimeVolt ELECTRIC</h1>
                         <p className="text-lg opacity-90 mb-8">Admin Panel</p>
@@ -42,9 +42,9 @@ export default function Login() {
                         {/* Mobile Logo */}
                         <div className="md:hidden text-center mb-8">
                             <img 
-                                src="/android-icon-192x192.png" 
+                                src="/prime-logo.png" 
                                 alt="PrimeVolt Electric Logo" 
-                                className="w-20 h-20 mx-auto mb-4 rounded-xl"
+                                className="w-20 h-20 mx-auto mb-4 rounded-xl object-contain"
                             />
                             <h2 className="text-xl font-bold text-primary-dark">PrimeVolt ELECTRIC</h2>
                         </div>
