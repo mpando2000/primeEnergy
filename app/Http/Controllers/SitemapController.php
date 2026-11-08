@@ -8,8 +8,7 @@ class SitemapController extends Controller
 {
     public function index()
     {
-        $projects = \App\Models\Project::where('is_active', true)->get();
-        $lands = \App\Models\LandInvestment::where('is_active', true)->get();
+        $projects = \App\Models\Project::published()->get();
         
         $sitemap = '<?xml version="1.0" encoding="UTF-8"?>';
         $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';

@@ -187,7 +187,7 @@ export default function MainLayout({ children, currentPage = '', transparentHead
                             <img 
                                 src="/prime-logo.png" 
                                 alt="PrimeVolt Logo" 
-                                className="h-14 w-auto"
+                                className="h-28 md:h-32 w-auto"
                             />
                             <span className={`font-bold text-lg uppercase transition-colors text-primary`}>
                                 {siteSettings?.company_name || 'PrimeVolt ELECTRIC CO. LTD'}

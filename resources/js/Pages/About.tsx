@@ -80,7 +80,7 @@ export default function About({ teamMembers = [] }: Props) {
                         </ul>
                         <div className="text-center my-8">
                             <div className="inline-block bg-theme-primary text-white py-4 px-8 rounded-lg font-bold">
-                                PrimeVolt ELECTRIC CO. LTD
+                                PrimeVolt ENERGY CO. LTD
                             </div>
                         </div>
                         <h3 className="section-title text-[22px] font-bold mb-6 mt-8">{t('about.vision.title')}</h3>
