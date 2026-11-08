@@ -1,9 +1,10 @@
 import { Head, usePage } from '@inertiajs/react';
 import MainLayout from '@/Layouts/MainLayout';
 import { useLanguage } from '@/contexts/LanguageContext';
+import PdfCanvas from '@/Components/PdfCanvas';
 import { useState } from 'react';
 
-type TabKey = 'about' | 'team' | 'philosophy' | 'careers' | 'policies';
+type TabKey = 'about' | 'team' | 'philosophy' | 'careers' | 'policies' | 'certificates';
 
 interface TeamMember {
     id: number;
@@ -25,15 +26,27 @@ interface SiteSettings {
     careers_email: string;
 }
 
-interface Props {
-    teamMembers?: TeamMember[];
+interface Certificate {
+    id: number;
+    name: string;
+    name_sw: string;
+    file_path: string;
+    file_type: 'pdf' | 'image';
 }
 
-export default function About({ teamMembers = [] }: Props) {
+interface Props {
+    teamMembers?: TeamMember[];
+    certificates?: Certificate[];
+}
+
+export default function About({ teamMembers = [], certificates = [] }: Props) {
     const { t, language } = useLanguage();
     const props = usePage().props as unknown as { pageBanners: Record<string, PageBanner>; siteSettings: SiteSettings };
     const { pageBanners, siteSettings } = props;
     const [activeTab, setActiveTab] = useState<TabKey>('about');
+    const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
+    const [pdfPage, setPdfPage] = useState(1);
+    const [pdfPages, setPdfPages] = useState(1);
 
     const bannerImage = pageBanners?.about?.image_url || 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&h=300&fit=crop';
 
@@ -61,7 +74,14 @@ export default function About({ teamMembers = [] }: Props) {
         { key: 'philosophy' as TabKey, label: t('about.sidebar.philosophy') },
         { key: 'careers' as TabKey, label: t('about.sidebar.careers') },
         { key: 'policies' as TabKey, label: t('about.sidebar.policies') },
+        { key: 'certificates' as TabKey, label: t('about.sidebar.certificates') },
     ];
+
+    const openCertificate = (certificate: Certificate) => {
+        setPdfPage(1);
+        setPdfPages(1);
+        setSelectedCertificate(certificate);
+    };
 
     const renderContent = () => {
         switch (activeTab) {
@@ -268,6 +288,51 @@ export default function About({ teamMembers = [] }: Props) {
                         </div>
                     </div>
                 );
+
+            case 'certificates':
+                return (
+                    <div>
+                        <h3 className="section-title mb-6 text-[22px] font-bold">{t('about.certificates.title')}</h3>
+                        <p className="mb-8 text-[#555]">{t('about.certificates.description')}</p>
+
+                        {certificates.length === 0 ? (
+                            <div className="rounded-xl bg-gray-50 px-6 py-12 text-center text-gray-500">
+                                <i className="fas fa-certificate mb-4 block text-5xl text-gray-300"></i>
+                                {t('about.certificates.empty')}
+                            </div>
+                        ) : (
+                            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                                {certificates.map((certificate) => {
+                                    const displayName = language === 'sw' ? certificate.name_sw : certificate.name;
+
+                                    return (
+                                        <button
+                                            key={certificate.id}
+                                            type="button"
+                                            className="group overflow-hidden rounded-xl border border-gray-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                                            onClick={() => openCertificate(certificate)}
+                                        >
+                                            <div className="flex h-64 items-center justify-center overflow-hidden bg-gray-100">
+                                                {certificate.file_type === 'pdf' ? (
+                                                    <PdfCanvas src={certificate.file_path} maxWidth={520} className="h-full w-full" />
+                                                ) : (
+                                                    <img src={certificate.file_path} alt={displayName} className="h-full w-full object-contain" />
+                                                )}
+                                            </div>
+                                            <div className="flex items-center justify-between gap-4 p-5">
+                                                <div>
+                                                    <h4 className="font-semibold text-gray-900">{displayName}</h4>
+                                                    <p className="mt-1 text-sm text-theme-primary">{t('about.certificates.view')}</p>
+                                                </div>
+                                                <i className="fas fa-expand text-theme-primary transition group-hover:scale-110"></i>
+                                            </div>
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                        )}
+                    </div>
+                );
             
             default:
                 return null;
@@ -344,6 +409,74 @@ export default function About({ teamMembers = [] }: Props) {
                     </div>
                 </div>
             </section>
+
+            {selectedCertificate && (
+                <div
+                    className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/85 p-3 md:p-6"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label={language === 'sw' ? selectedCertificate.name_sw : selectedCertificate.name}
+                    onClick={() => setSelectedCertificate(null)}
+                >
+                    <div className="flex max-h-[96vh] w-full max-w-6xl flex-col overflow-hidden rounded-xl bg-white" onClick={(event) => event.stopPropagation()}>
+                        <div className="flex items-center justify-between gap-4 border-b px-4 py-3 md:px-6">
+                            <h3 className="font-semibold text-gray-900">
+                                {language === 'sw' ? selectedCertificate.name_sw : selectedCertificate.name}
+                            </h3>
+                            <button
+                                type="button"
+                                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100 text-2xl text-gray-700 hover:bg-gray-200"
+                                onClick={() => setSelectedCertificate(null)}
+                                aria-label={t('about.certificates.close')}
+                            >
+                                &times;
+                            </button>
+                        </div>
+
+                        <div className="min-h-0 flex-1 overflow-auto bg-gray-200 p-3 md:p-6">
+                            {selectedCertificate.file_type === 'pdf' ? (
+                                <PdfCanvas
+                                    src={selectedCertificate.file_path}
+                                    pageNumber={pdfPage}
+                                    maxWidth={1100}
+                                    className="mx-auto min-h-[70vh] w-full max-w-5xl shadow-lg"
+                                    onDocumentLoad={setPdfPages}
+                                />
+                            ) : (
+                                <img
+                                    src={selectedCertificate.file_path}
+                                    alt={language === 'sw' ? selectedCertificate.name_sw : selectedCertificate.name}
+                                    className="mx-auto max-h-[78vh] max-w-full bg-white shadow-lg"
+                                />
+                            )}
+                        </div>
+
+                        {selectedCertificate.file_type === 'pdf' && (
+                            <div className="flex items-center justify-center gap-4 border-t px-4 py-3">
+                                <button
+                                    type="button"
+                                    className="rounded-lg bg-theme-primary px-4 py-2 text-white disabled:cursor-not-allowed disabled:opacity-40"
+                                    disabled={pdfPage <= 1}
+                                    onClick={() => setPdfPage((page) => Math.max(1, page - 1))}
+                                >
+                                    <i className="fas fa-chevron-left mr-2"></i>{t('about.certificates.previous')}
+                                </button>
+                                <span className="text-sm font-medium text-gray-700">
+                                    {t('about.certificates.page')} {pdfPage} / {pdfPages}
+                                </span>
+                                <button
+                                    type="button"
+                                    className="rounded-lg bg-theme-primary px-4 py-2 text-white disabled:cursor-not-allowed disabled:opacity-40"
+                                    disabled={pdfPage >= pdfPages}
+                                    onClick={() => setPdfPage((page) => Math.min(pdfPages, page + 1))}
+                                >
+                                    {t('about.certificates.next')}<i className="fas fa-chevron-right ml-2"></i>
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
         </MainLayout>
     );
 }

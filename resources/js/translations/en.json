@@ -82,7 +82,8 @@
             "ourTeam": "Our Team",
             "philosophy": "Our Business Philosophy",
             "careers": "Career Opportunities",
-            "policies": "Company Policies"
+            "policies": "Company Policies",
+            "certificates": "Certificates"
         },
         "content": {
             "title": "Our Company",
@@ -217,6 +218,16 @@
                 "item3": "Continuous improvement programs",
                 "item4": "Customer feedback integration"
             }
+        },
+        "certificates": {
+            "title": "Company Certificates",
+            "description": "View our official company registrations, memberships and professional certificates.",
+            "empty": "No certificates are available at the moment.",
+            "view": "Click to view certificate",
+            "close": "Close certificate viewer",
+            "previous": "Previous",
+            "next": "Next",
+            "page": "Page"
         }
     },
     "services": {

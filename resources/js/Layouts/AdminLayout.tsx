@@ -174,6 +174,11 @@ export default function AdminLayout({
       icon: "fa-images",
       label: "Gallery",
     },
+    can("certificates.view") && {
+      href: "/admin/certificates",
+      icon: "fa-certificate",
+      label: "Certificates",
+    },
   ].filter(Boolean);
 
   const settingsItems = [

@@ -82,7 +82,8 @@
             "ourTeam": "Timu Yetu",
             "philosophy": "Falsafa ya Biashara Yetu",
             "careers": "Fursa za Kazi",
-            "policies": "Sera za Kampuni"
+            "policies": "Sera za Kampuni",
+            "certificates": "Vyeti"
         },
         "content": {
             "title": "Kampuni Yetu",
@@ -217,6 +218,16 @@
                 "item3": "Mipango ya uboreshaji inayoendelea",
                 "item4": "Ujumuishaji wa maoni ya wateja"
             }
+        },
+        "certificates": {
+            "title": "Vyeti vya Kampuni",
+            "description": "Tazama usajili rasmi, uanachama na vyeti vya kitaalamu vya kampuni yetu.",
+            "empty": "Hakuna vyeti vinavyopatikana kwa sasa.",
+            "view": "Bofya kutazama cheti",
+            "close": "Funga sehemu ya kutazama cheti",
+            "previous": "Nyuma",
+            "next": "Mbele",
+            "page": "Ukurasa"
         }
     },
     "services": {
