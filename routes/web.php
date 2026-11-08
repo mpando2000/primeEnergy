@@ -19,8 +19,11 @@ Route::get('/about', function () {
         ->where('is_active', true)
         ->orderBy('sort_order')
         ->get();
+    $certificates = App\Models\Certificate::published()->get();
+
     return Inertia::render('About', [
         'teamMembers' => $teamMembers,
+        'certificates' => $certificates,
     ]);
 })->name('about');
 
@@ -226,6 +229,26 @@ Route::middleware(['auth', 'active'])->prefix('admin')->group(function () {
     Route::put('/banners/{banner}', [App\Http\Controllers\PageBannerController::class, 'update'])
         ->middleware('permission:gallery.edit')
         ->name('admin.banners.update');
+
+    // Company Certificates
+    Route::get('/certificates', [App\Http\Controllers\CertificateController::class, 'adminIndex'])
+        ->middleware('permission:certificates.view')
+        ->name('admin.certificates');
+    Route::post('/certificates', [App\Http\Controllers\CertificateController::class, 'store'])
+        ->middleware('permission:certificates.create')
+        ->name('admin.certificates.store');
+    Route::post('/certificates/reorder', [App\Http\Controllers\CertificateController::class, 'updateOrder'])
+        ->middleware('permission:certificates.edit')
+        ->name('admin.certificates.reorder');
+    Route::post('/certificates/{certificate}', [App\Http\Controllers\CertificateController::class, 'update'])
+        ->middleware('permission:certificates.edit')
+        ->name('admin.certificates.update');
+    Route::patch('/certificates/{certificate}/toggle', [App\Http\Controllers\CertificateController::class, 'toggleActive'])
+        ->middleware('permission:certificates.edit')
+        ->name('admin.certificates.toggle');
+    Route::delete('/certificates/{certificate}', [App\Http\Controllers\CertificateController::class, 'destroy'])
+        ->middleware('permission:certificates.delete')
+        ->name('admin.certificates.destroy');
     
     // Settings
     Route::get('/settings', [App\Http\Controllers\SettingController::class, 'index'])
