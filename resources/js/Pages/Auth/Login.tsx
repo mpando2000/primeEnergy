@@ -25,10 +25,10 @@ export default function Login() {
                     <div className="text-center text-white relative z-10 animate-slide-from-left">
                         <img 
                             src="/prime-logo.png" 
-                            alt="PrimeVolt Electric Logo" 
+                            alt="PrimeVolt Energy Logo" 
                             className="w-48 h-48 mx-auto mb-8 rounded-2xl shadow-2xl object-contain bg-white p-4"
                         />
-                        <h1 className="text-3xl font-bold mb-3 tracking-wider">PrimeVolt ELECTRIC</h1>
+                        <h1 className="text-3xl font-bold mb-3 tracking-wider">PrimeVolt ENERGY</h1>
                         <p className="text-lg opacity-90 mb-8">Admin Panel</p>
                         <p className="text-sm opacity-70 max-w-xs mx-auto leading-relaxed">
                             Your trusted partner for electrical solutions, HVAC systems, and renewable energy in Tanzania.
@@ -46,7 +46,7 @@ export default function Login() {
                                 alt="PrimeVolt Electric Logo" 
                                 className="w-28 h-28 mx-auto mb-4 rounded-xl object-contain"
                             />
-                            <h2 className="text-xl font-bold text-primary-dark">PrimeVolt ELECTRIC</h2>
+                            <h2 className="text-xl font-bold text-primary-dark">PrimeVolt ENERGY</h2>
                         </div>
 
                         <h2 className="text-2xl font-semibold text-gray-800 mb-8 text-center">Sign In</h2>
